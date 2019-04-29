@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
+import ResultsPage from './Components/Results/ResultsPage';
 import WhyPage from './Components/InfoSection/WhyPage';
 import ConsumerHowPage from './Components/InfoSection/ConsumerHowPage';
 import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
@@ -11,6 +13,7 @@ function App() {
     <div className="App">
      
         <Route exact path="/" component={ Homepage } />
+        <Route path="/results" component= { ResultsPage } />
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
@@ -20,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

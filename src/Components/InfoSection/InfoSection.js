@@ -13,7 +13,7 @@ function InfoSection() {
       <section className="consumers-how-section">
         <p>How can consumers help?</p>
         <Link to={'/consumer-help'}>Make more sustainable choices when you eat</Link>
-        <a href="">Explore restaurants in your area that support your mission</a>
+        {/* <a href="">Explore restaurants in your area that support your mission</a> */}
       </section>
 
       <section className="businesses-how-section">
