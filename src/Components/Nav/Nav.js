@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import "./Nav.css";
 
 function Nav() {
   return (
@@ -6,7 +8,7 @@ function Nav() {
       <nav className="nav" role="navigation">
 
         <div className="nav-link home">
-          <a href="">SustainaChoice</a> {/* Will be changed to route */}
+        <Link to={'/'}>SustainaChoice</Link>
         </div>
         <div className="nav--home-links">
           {/* <a className="nav-link" href="">Sign up</a> {/* Will be changed to route */}
