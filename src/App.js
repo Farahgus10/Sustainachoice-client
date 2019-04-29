@@ -5,7 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <body>
+        <Homepage />
+      </body>
+      <footer role="content-info">Footer</footer>
     </div>
   );
 }
