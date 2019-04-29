@@ -7,7 +7,7 @@ import './ResultsPage.css';
 class ResultsPage extends React.Component {
   state = {
     results: [],
-    expandedView: null
+    expandedView: false,
   }
 
   componentDidMount() {
@@ -30,6 +30,12 @@ class ResultsPage extends React.Component {
     .catch(error => console.log('Error:', error));
   }
 
+  toggleExpandedItem = () => {
+    this.setState({
+      expandedView: !this.state.expandedView,
+    })
+  }
+
   render() {
     return (
     <div className="results">
@@ -40,7 +46,9 @@ class ResultsPage extends React.Component {
           <h3>Washington, D.C.</h3>
         </header>
         <ResultsSearchForm />
-        <ResultsList results = {this.state.results}/>
+        <ResultsList results = {this.state.results}
+        toggleExpandedItem={this.toggleExpandedItem} 
+        expandedView={this.state.expandedView}/>
       </section>
 
 
