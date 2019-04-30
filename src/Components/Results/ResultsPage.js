@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
-import ResultsSearchForm from './ResultsSearchForm';
+import SearchForm from '../SearchForm/SearchForm';
 import ResultsList from './ResultsList';
 import './ResultsPage.css';
 
@@ -30,9 +30,9 @@ class ResultsPage extends React.Component {
     .catch(error => console.log('Error:', error));
   }
 
-  toggleExpandedItem = () => {
+  toggleExpandedItem = (key) => {
     this.setState({
-      expandedView: !this.state.expandedView,
+      expandedView: key,
     })
   }
 
@@ -45,7 +45,7 @@ class ResultsPage extends React.Component {
         <header role="banner">
           <h3>Washington, D.C.</h3>
         </header>
-        <ResultsSearchForm />
+        <SearchForm />
         <ResultsList results = {this.state.results}
         toggleExpandedItem={this.toggleExpandedItem} 
         expandedView={this.state.expandedView}/>

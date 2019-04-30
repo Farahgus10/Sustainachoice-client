@@ -4,26 +4,27 @@ class ResultsList extends React.Component {
   
 
   render(){
-    console.log(this.props.results)
-    
-    const result = (!this.props.expandedView) ? 
-      this.props.results.map((item, i) => 
-        <li key={i}>
-          <p>{item.location_name}</p>
-        </li>
-      )
-    : this.props.results.map((item, i) => 
-      <li key={i}>
+      const result = this.props.results.map((item, i) => 
+      {
+        if (this.props.expandedView === i ) {
+        return (<li key={i} onClick={() => this.props.toggleExpandedItem(-1) }>
         <p>{item.location_name}</p>
         <p>{item.location_type}</p>
         <p>{item.info}</p>
         <p>{item.location_address}</p>
-      </li>
-    )
-
+      </li>)
+      } else {
+        return (
+           <li key={i} onClick={() => this.props.toggleExpandedItem(i)}>
+          <p>{item.location_name}</p>
+          </li>
+        )
+      }
+    })
+  
   return (
     <div className="ResultsList" >
-      <div className="results" onClick={this.props.toggleExpandedItem}>
+      <div className="results" >
       <ul>
         {result}
       </ul>
