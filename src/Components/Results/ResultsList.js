@@ -2,7 +2,6 @@ import React from 'react';
 
 class ResultsList extends React.Component {
   
-
   render(){
       const result = this.props.results.map((item, i) => 
       {

@@ -18,6 +18,7 @@ class App extends React.Component {
 
 handleSubmit = (e) => {
   e.preventDefault();
+  console.log('hello')
   let query = e.currentTarget.elements.searchTerm.value;
   this.setState({ searchTerm: query })
 
@@ -51,15 +52,20 @@ handleSubmit = (e) => {
   render() {
   return (
     <div className="App">
-     
+    {/* <Route exact path="/" render={() => (
+      (this.state.searchTerm) ? (
+          <Redirect to="/results" />
+        ) : (
+          <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
+            handleSubmit={this.handleSubmit} />
+        ) 
+        // this.state.searchTerm = '';
+      )}/>  */}
+
         <Route exact path="/" render={() => (
-          (this.state.searchTerm) ? (
-            <Redirect to="/results" />
-          ) : (
-            <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
-              handleSubmit={this.handleSubmit} />
-          )
-        )}/>
+          <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
+          handleSubmit={this.handleSubmit} />
+        )} />
 
         <Route path="/results" render={() => 
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} 
