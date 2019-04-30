@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import ResultsPage from './Components/Results/ResultsPage';
@@ -15,9 +15,16 @@ class App extends React.Component {
     searchTerm: '',
   }
 
-  componentDidMount() {
-    this.fetchApi('results', 'results');
-  }
+
+handleSubmit = (e) => {
+  e.preventDefault();
+  let query = e.currentTarget.elements.searchTerm.value;
+  this.setState({ searchTerm: query })
+
+  this.fetchApi('results', 'results');
+}
+
+
   fetchApi(endpoint, stateKey, method = 'GET', apiBody ) {
     fetch(`http://localhost:8000/api/${endpoint}`, {
       method: method,
@@ -30,7 +37,7 @@ class App extends React.Component {
       return response.json()
     })
     .then (response => {
-      this.setState({ [stateKey]: response });
+      this.setState({ results: response });
     })
     .catch(error => console.log('Error:', error));
   }
@@ -41,23 +48,23 @@ class App extends React.Component {
     })
   }
 
-  updateSearch = (searchTerm) => {
-    this.setState({ searchTerm });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-  }
-
   render() {
   return (
     <div className="App">
      
-        <Route exact path="/" render={() => 
-          <Homepage results={this.state.results} searchTerm={this.state.searchTerm} />}/>
+        <Route exact path="/" render={() => (
+          (this.state.searchTerm) ? (
+            <Redirect to="/results" />
+          ) : (
+            <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
+              handleSubmit={this.handleSubmit} />
+          )
+        )}/>
+
         <Route path="/results" render={() => 
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} 
-          expandedView={this.state.expandedView} toggleExpandedItem={this.toggleExpandedItem}/>}/>
+              expandedView={this.state.expandedView} toggleExpandedItem={this.toggleExpandedItem}
+              handleSubmit={this.handleSubmit}/>}/>
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />

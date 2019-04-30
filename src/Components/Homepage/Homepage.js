@@ -12,7 +12,7 @@ class Homepage extends React.Component {
       <Nav />
       <main>
         <Header />
-        <SearchForm  />
+        <SearchForm handleSubmit={this.props.handleSubmit}/>
         <InfoSection />
       </main>
     </div>

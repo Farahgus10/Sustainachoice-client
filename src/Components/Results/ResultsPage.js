@@ -6,6 +6,8 @@ import './ResultsPage.css';
 
 class ResultsPage extends React.Component {
   render() {
+    console.log(this.props.results)
+
     return (
     <div className="results">
       <Nav />
@@ -14,7 +16,7 @@ class ResultsPage extends React.Component {
         <header role="banner">
           <h3>Washington, D.C.</h3>
         </header>
-        <SearchForm />
+        <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}/>
         <ResultsList results = {this.props.results}
         toggleExpandedItem={this.props.toggleExpandedItem} 
         expandedView={this.props.expandedView}/>
