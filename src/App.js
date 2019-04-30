@@ -8,13 +8,56 @@ import ConsumerHowPage from './Components/InfoSection/ConsumerHowPage';
 import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
 import './App.css';
 
-function App() {
+class App extends React.Component {
+  state = {
+    results: [],
+    expandedView: false,
+    searchTerm: '',
+  }
 
+  componentDidMount() {
+    this.fetchApi('results', 'results');
+  }
+  fetchApi(endpoint, stateKey, method = 'GET', apiBody ) {
+    fetch(`http://localhost:8000/api/${endpoint}`, {
+      method: method,
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(apiBody)
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then (response => {
+      this.setState({ [stateKey]: response });
+    })
+    .catch(error => console.log('Error:', error));
+  }
+
+  toggleExpandedItem = (key) => {
+    this.setState({
+      expandedView: key,
+    })
+  }
+
+  updateSearch = (searchTerm) => {
+    this.setState({ searchTerm });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
+  render() {
   return (
     <div className="App">
      
-        <Route exact path="/" component={ Homepage } />
-        <Route path="/results" component= { ResultsPage } />
+        <Route exact path="/" render={() => 
+          <Homepage results={this.state.results} searchTerm={this.state.searchTerm} />}/>
+        <Route path="/results" render={() => 
+          <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} 
+          expandedView={this.state.expandedView} toggleExpandedItem={this.toggleExpandedItem}/>}/>
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
@@ -22,6 +65,6 @@ function App() {
       {/* <footer role="content-info">Footer</footer> */}
     </div>
   );
-}
+}}
 
 export default withRouter(App);
