@@ -13,6 +13,7 @@ class App extends React.Component {
     results: [],
     expandedView: false,
     searchTerm: '',
+    typeFilter: '',
   }
 
 updateSearch = (searchTerm) => {
@@ -22,6 +23,11 @@ updateSearch = (searchTerm) => {
 handleSubmit = (e) => {
   e.preventDefault();
   this.fetchApi();
+}
+
+handleMenuChange = (typeFilter) => {
+  this.setState({ typeFilter })
+  console.log(this.state.typeFilter)
 }
 
   fetchApi(method = 'GET', apiBody ) {
@@ -60,16 +66,14 @@ handleSubmit = (e) => {
   return (
     <div className="App">
         <Route exact path="/" render={() => (
-          <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
-          handleSubmit={this.handleSubmit} updateSearch={this.updateSearch}
-          path={this.props.match.path}/>
+          <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} 
+          updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path}/>
         )} />
 
         <Route path="/results" render={() => 
-          <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} 
-              expandedView={this.state.expandedView} toggleExpandedItem={this.toggleExpandedItem}
-              handleSubmit={this.handleSubmit}
-              updateSearch={this.updateSearch}/>}/>
+          <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
+          toggleExpandedItem={this.toggleExpandedItem} handleSubmit={this.handleSubmit} updateSearch={this.updateSearch} 
+          handleMenuChange={this.handleMenuChange}/>} />
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />

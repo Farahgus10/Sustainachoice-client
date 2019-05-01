@@ -11,11 +11,12 @@ class SearchForm extends React.Component {
           <input name="searchTerm" placeholder="e.g. Washington"/>
         </label>
         What are you looking for?
-        <select id="typeSelection">
+        <select id="typeSelection" onChange={this.props.handleMenuChange}>
           <option>Restaurant</option>
           <option>Farmer's Market</option>
           <option>Grocery Store</option>
           <option>Bar</option>
+          <option value="all" selected>all</option>
         </select>
         
           <input type="submit"/>
@@ -30,11 +31,12 @@ class SearchForm extends React.Component {
             placeholder="e.g. Washington" />
            
         What are you looking for?
-        <select id="typeSelection">
-          <option>Restaurant</option>
-          <option>Farmer's Market</option>
-          <option>Grocery Store</option>
-          <option>Bar</option>
+        <select id="typeSelection" onChange={e => this.props.handleMenuChange(e.target.value)}>
+          <option value="Restaurant">Restaurant</option>
+          <option value="Farmer's Market"> Farmer's Market</option>
+          <option value="Grocery Store">Grocery Store</option>
+          <option value="Bar">Bar</option>
+          <option value="all" selected>all</option>
         </select>
           <button  type="submit">Go!</button>
       </form>
