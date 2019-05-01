@@ -15,19 +15,20 @@ class App extends React.Component {
     searchTerm: '',
   }
 
+updateSearch = (searchTerm) => {
+  this.setState({searchTerm})
+}
 
 handleSubmit = (e) => {
   e.preventDefault();
-  console.log('hello')
   let query = e.currentTarget.elements.searchTerm.value;
-  this.setState({ searchTerm: query })
 
-  this.fetchApi('results', 'results');
+  this.fetchApi('results');
+  this.props.history.push('/results')
 }
 
-
-  fetchApi(endpoint, stateKey, method = 'GET', apiBody ) {
-    fetch(`http://localhost:8000/api/${endpoint}`, {
+  fetchApi(stateKey, method = 'GET', apiBody ) {
+    fetch(`http://localhost:8000/api/results?location_type=${this.state.searchTerm}`, {
       method: method,
       headers: {
         'content-type': 'application/json'
@@ -52,25 +53,16 @@ handleSubmit = (e) => {
   render() {
   return (
     <div className="App">
-    {/* <Route exact path="/" render={() => (
-      (this.state.searchTerm) ? (
-          <Redirect to="/results" />
-        ) : (
-          <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
-            handleSubmit={this.handleSubmit} />
-        ) 
-        // this.state.searchTerm = '';
-      )}/>  */}
-
         <Route exact path="/" render={() => (
           <Homepage results={this.state.results} searchTerm={this.state.searchTerm}
-          handleSubmit={this.handleSubmit} />
+          handleSubmit={this.handleSubmit} updateSearch={this.updateSearch}/>
         )} />
 
         <Route path="/results" render={() => 
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} 
               expandedView={this.state.expandedView} toggleExpandedItem={this.toggleExpandedItem}
-              handleSubmit={this.handleSubmit}/>}/>
+              handleSubmit={this.handleSubmit}
+              updateSearch={this.updateSearch}/>}/>
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />

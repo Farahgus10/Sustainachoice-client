@@ -6,15 +6,6 @@ import InfoSection from '../InfoSection/InfoSection';
 import ResultsPage from '../Results/ResultsPage';
 
 class Homepage extends React.Component {
-  handleSubmit = () => {
-    this.props.handleSubmit()
-      if (this.props.searchTerm) {
-        this.state.redirect: true
-   
-      }
-    
-  }
-  
   render(){
 
     return (
@@ -22,7 +13,8 @@ class Homepage extends React.Component {
       <Nav />
       <main>
         <Header />
-        <SearchForm handleSubmit={this.handleSubmit()} searchTerm={this.props.searchTerm}/>
+        <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
+            updateSearch={this.props.updateSearch}/>
         <InfoSection />
       </main>
     </div>

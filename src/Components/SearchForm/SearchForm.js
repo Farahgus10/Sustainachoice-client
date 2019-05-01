@@ -15,9 +15,12 @@ class SearchForm extends React.Component {
       <form onSubmit={this.props.handleSubmit}>
         <label>
           Search for a new location:
-          <input name="searchTerm" />
         </label>
-          <input type="submit"/>
+          <input 
+            onChange={e => this.props.updateSearch(e.target.value)}
+            id="searchTerm"
+            placeholder="e.g. Washington, D.C." />
+          <button  type="submit">Go!</button>
       </form>
 
     return (
