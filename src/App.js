@@ -25,7 +25,13 @@ handleSubmit = (e) => {
 }
 
   fetchApi(method = 'GET', apiBody ) {
-    fetch(`http://localhost:8000/api/results?location_city=${this.state.searchTerm}`, {
+    const params = {
+      location_zip_code: this.state.searchTerm
+    };
+    console.log(params)
+    const urlParams = new URLSearchParams(Object.entries(params));
+
+    fetch('http://localhost:8000/api/results?' + urlParams, {
       method: method,
       headers: {
         'content-type': 'application/json'
