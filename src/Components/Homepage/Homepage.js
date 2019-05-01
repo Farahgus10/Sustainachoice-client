@@ -3,18 +3,16 @@ import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import InfoSection from '../InfoSection/InfoSection';
-import ResultsPage from '../Results/ResultsPage';
 
 class Homepage extends React.Component {
   render(){
-
     return (
     <div className="Homepage">
       <Nav />
       <main>
         <Header />
         <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
-            updateSearch={this.props.updateSearch}/>
+            updateSearch={this.props.updateSearch} path={this.props.path}/>
         <InfoSection />
       </main>
     </div>

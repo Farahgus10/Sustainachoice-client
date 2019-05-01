@@ -3,7 +3,8 @@ import React from 'react';
 class ResultsList extends React.Component {
   
   render(){
-      const result = this.props.results.map((item, i) => 
+      const result =
+      this.props.results.map((item, i) => 
       {
         if (this.props.expandedView === i ) {
         return (<li key={i} onClick={() => this.props.toggleExpandedItem(-1) }>
