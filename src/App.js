@@ -20,24 +20,27 @@ updateSearch = (searchTerm) => {
   this.setState({searchTerm})
 }
 
-handleSubmit = (e) => {
+handleSubmit = (e, header) => {
   e.preventDefault();
   this.fetchApi();
+
+  this.setState({ header })
 }
 
 handleMenuChange = (typeFilter) => {
-  this.setState({ typeFilter })
-  console.log(this.state.typeFilter)
+  this.setState({ typeFilter }, () => {
+    console.log(this.state.typeFilter)
+  })
 }
 
   fetchApi(method = 'GET', apiBody ) {
     const params = {
       location_zip_code: this.state.searchTerm
     };
-    console.log(params)
     const urlParams = new URLSearchParams(Object.entries(params));
+    let url = 'http://localhost:8000/api/results?' + urlParams
 
-    fetch('http://localhost:8000/api/results?' + urlParams, {
+    fetch(url, {
       method: method,
       headers: {
         'content-type': 'application/json'
@@ -46,12 +49,15 @@ handleMenuChange = (typeFilter) => {
     })
     .then(response => { 
       console.log(response)
-      return response.json()
+      if (!response.ok) {
+        return
+      } else { return response.json() }
+      
     })
     .then (response => {
-      console.log(response)
       this.setState({ results: response } , () => { return this.props.history.push('/results')}
         );
+        console.log(this.state.results)
     })
     .catch(error => console.log('Error:', error));
   }
@@ -73,7 +79,7 @@ handleMenuChange = (typeFilter) => {
         <Route path="/results" render={() => 
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
           toggleExpandedItem={this.toggleExpandedItem} handleSubmit={this.handleSubmit} updateSearch={this.updateSearch} 
-          handleMenuChange={this.handleMenuChange}/>} />
+          handleMenuChange={this.handleMenuChange} />} />
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />

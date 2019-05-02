@@ -3,7 +3,7 @@ import React from 'react';
 class ResultsList extends React.Component {
   
   render(){
-      const result =
+      const result = ((!this.props.results) && (this.props.results === [])) ? <p>No results</p> : 
       this.props.results.map((item, i) => 
       {
         if (this.props.expandedView === i ) {
