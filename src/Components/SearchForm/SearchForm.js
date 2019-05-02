@@ -14,7 +14,7 @@ class SearchForm extends React.Component {
         <select id="typeSelection" onChange={this.props.handleMenuChange}> 
           <option>all</option>
           <option>Restaurant</option>
-          <option>Farmer's Market</option>
+          <option>Farmers Market</option>
           <option>Grocery Store</option>
           <option>Bar</option>
          
@@ -35,7 +35,7 @@ class SearchForm extends React.Component {
         <select id="typeSelection" onChange={e => this.props.handleMenuChange(e.target.value)}>
           <option defaultValue="all" >all</option> 
           <option value="Restaurant">Restaurant</option>
-          <option value="Farmer's Market"> Farmer's Market</option>
+          <option value="Farmers Market"> Farmers Market</option>
           <option value="Grocery Store">Grocery Store</option>
           <option value="Bar">Bar</option>
           

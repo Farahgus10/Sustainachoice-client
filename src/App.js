@@ -13,7 +13,7 @@ class App extends React.Component {
     results: [],
     expandedView: false,
     searchTerm: '',
-    typeFilter: '',
+    typeFilter: 'all',
   }
 
 updateSearch = (searchTerm) => {
@@ -39,6 +39,10 @@ handleMenuChange = (typeFilter) => {
     };
     const urlParams = new URLSearchParams(Object.entries(params));
     let url = 'http://localhost:8000/api/results?' + urlParams
+
+    if(this.state.typeFilter !== 'all') {
+      url = url + `&location_type=${this.state.typeFilter}`
+    }
 
     fetch(url, {
       method: method,
@@ -69,6 +73,7 @@ handleMenuChange = (typeFilter) => {
   }
 
   render() {
+    console.log(this.state.typeFilter)
   return (
     <div className="App">
         <Route exact path="/" render={() => (
