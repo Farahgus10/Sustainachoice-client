@@ -3,15 +3,18 @@ import React from 'react';
 class SearchForm extends React.Component {
 
   render(){
-
     const searchForm = (this.props.path) ? 
       <form onSubmit={this.props.handleSubmit}>
         <label>
           Enter a zip code to search for sustainable food near you:
-          <input name="searchTerm" placeholder="e.g. 20007"/>
         </label>
+          <input 
+            onChange={e => this.props.updateSearch(e.target.value)}
+            name="searchTerm" 
+            placeholder="e.g. 20007"/>
+        
         What are you looking for?
-        <select id="typeSelection" onChange={this.props.handleMenuChange}> 
+        <select id="typeSelection" onChange={e => this.props.handleMenuChange(e.target.value)}> 
           <option>all</option>
           <option>Restaurant</option>
           <option>Farmers Market</option>

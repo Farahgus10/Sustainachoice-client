@@ -17,15 +17,17 @@ class App extends React.Component {
   }
 
 updateSearch = (searchTerm) => {
-  this.setState({searchTerm})
+  this.setState({searchTerm}, () => {console.log(this.state.searchTerm)})
 }
 
-handleSubmit = (e, header) => {
+handleSubmit = (e) => {
   e.preventDefault();
   this.fetchApi();
-
-  this.setState({ header })
 }
+
+// componentWillMount(){
+//   this.fetchApi();
+// }
 
 handleMenuChange = (typeFilter) => {
   this.setState({ typeFilter }, () => {
@@ -33,37 +35,38 @@ handleMenuChange = (typeFilter) => {
   })
 }
 
-  fetchApi(method = 'GET', apiBody ) {
-    const params = {
-      location_zip_code: this.state.searchTerm
-    };
-    const urlParams = new URLSearchParams(Object.entries(params));
-    let url = 'http://localhost:8000/api/results?' + urlParams
+fetchApi(method = 'GET', apiBody ) {
+  const params = {
+    location_zip_code: this.state.searchTerm
+  };
+  const urlParams = new URLSearchParams(Object.entries(params));
+  let url = 'http://localhost:8000/api/results?';
 
-    if(this.state.typeFilter !== 'all') {
-      url = url + `&location_type=${this.state.typeFilter}`
-    }
+  if(this.state.searchTerm) { url = url + urlParams}
+  if(this.state.typeFilter !== 'all') {
+    url = url + `&location_type=${this.state.typeFilter}`
+  }
 
-    fetch(url, {
-      method: method,
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(apiBody)
-    })
-    .then(response => { 
-      console.log(response)
-      if (!response.ok) {
-        return
-      } else { return response.json() }
-      
-    })
-    .then (response => {
-      this.setState({ results: response } , () => { return this.props.history.push('/results')}
-        );
-        console.log(this.state.results)
-    })
-    .catch(error => console.log('Error:', error));
+  fetch(url, {
+    method: method,
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(apiBody)
+  })
+  .then(response => { 
+    console.log(response)
+    if (!response.ok) {
+      return
+    } else { return response.json() }
+    
+  })
+  .then (response => {
+    this.setState({ results: response }, () => { return this.props.history.push('/results')}
+    );
+      console.log(this.state.results)
+  })
+  .catch(error => console.log('Error:', error));
   }
 
   toggleExpandedItem = (key) => {
@@ -73,7 +76,6 @@ handleMenuChange = (typeFilter) => {
   }
 
   render() {
-    console.log(this.state.typeFilter)
   return (
     <div className="App">
         <Route exact path="/" render={() => (
