@@ -35,9 +35,29 @@ class GoogleMap extends React.Component{
       <div className="google-map">
         <Map
             google={this.props.google}
-            zoom={14}
+            zoom={13}
             style={mapStyles}
-            initialCenter={{ lat: 38.9072, lng: -77.0369 }} />
+            initialCenter={{ lat: 38.9072, lng: -77.0369 }} 
+            >
+        {this.props.results.map(place => {
+          return (
+            <Marker
+              onClick={this.onMarkerClick}
+              name={place.location_name}
+              position={{ lat: place.latitude, lng: place.longitude}}
+             />
+          )
+        })}
+        <InfoWindow 
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}
+          onClose={this.onClose} 
+        >
+          <div>
+            <h4>{this.state.selectedPlace.name}</h4>
+          </div>
+          </InfoWindow>  
+      </Map>   
       </div> 
   )}
 }

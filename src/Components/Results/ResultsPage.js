@@ -23,7 +23,7 @@ class ResultsPage extends React.Component {
           expandedView={this.props.expandedView}/>
 
           <div className="map">
-            <GoogleMap />
+            <GoogleMap results={this.props.results}/>
           </div>
       </section>
 

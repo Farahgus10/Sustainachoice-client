@@ -17,18 +17,13 @@ class App extends React.Component {
   }
 
 updateSearch = (searchTerm) => {
-  this.setState({searchTerm}, () => {console.log(this.state.searchTerm)})
+  this.setState({searchTerm})
 }
 
 handleSubmit = (e) => {
   e.preventDefault();
   this.fetchApi();
 }
-
-// componentWillMount(){
-//   this.fetchApi();
-// }
-
 handleMenuChange = (typeFilter) => {
   this.setState({ typeFilter }, () => {
     console.log(this.state.typeFilter)
@@ -55,7 +50,7 @@ fetchApi(method = 'GET', apiBody ) {
     body: JSON.stringify(apiBody)
   })
   .then(response => { 
-    console.log(response)
+    // console.log(response)
     if (!response.ok) {
       return
     } else { return response.json() }
