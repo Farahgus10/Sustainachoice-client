@@ -24,6 +24,7 @@ class SearchForm extends React.Component {
         </select>
         
           <input type="submit"/>
+          <p>*Not sure where to look? Just click Submit to get results for all locations!</p>
       </form> : 
       <form onSubmit={this.props.handleSubmit}>
         <label>
@@ -44,6 +45,7 @@ class SearchForm extends React.Component {
           
         </select>
           <button  type="submit">Go!</button>
+          <p>*Not sure where to look? Just click Submit to get results for all locations!</p>
       </form>
 
     return (

@@ -12,6 +12,7 @@ class ResultsList extends React.Component {
         <p>{item.location_type}</p>
         <p>{item.info}</p>
         <p>{item.location_address}</p>
+        <a href={item.website}>{item.website}</a>
       </li>)
       } else {
         return (

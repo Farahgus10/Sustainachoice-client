@@ -8,7 +8,7 @@ class Homepage extends React.Component {
   render(){
     return (
     <div className="Homepage">
-      <Nav />
+      <Nav path={this.props.path}/>
       <main>
         <Header />
         <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
