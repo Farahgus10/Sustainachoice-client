@@ -12,7 +12,7 @@ class Homepage extends React.Component {
       <main>
         <Header />
         <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
-            updateSearch={this.props.updateSearch} path={this.props.path} handleMenuChange={this.props.handleMenuChange}/>
+            updateSearch={this.props.updateSearch} path={this.props.path} handleMenuChange={this.props.handleMenuChange} typeFilter={this.props.typeFilter}/>
         <InfoSection />
       </main>
     </div>

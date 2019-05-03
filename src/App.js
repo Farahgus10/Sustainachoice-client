@@ -25,9 +25,7 @@ handleSubmit = (e) => {
   this.fetchApi();
 }
 handleMenuChange = (typeFilter) => {
-  this.setState({ typeFilter }, () => {
-    console.log(this.state.typeFilter)
-  })
+  this.setState({ typeFilter })
 }
 
 fetchApi(method = 'GET', apiBody ) {
@@ -50,7 +48,6 @@ fetchApi(method = 'GET', apiBody ) {
     body: JSON.stringify(apiBody)
   })
   .then(response => { 
-    // console.log(response)
     if (!response.ok) {
       return
     } else { return response.json() }
@@ -59,7 +56,6 @@ fetchApi(method = 'GET', apiBody ) {
   .then (response => {
     this.setState({ results: response }, () => { return this.props.history.push('/results')}
     );
-      console.log(this.state.results)
   })
   .catch(error => console.log('Error:', error));
   }
@@ -75,13 +71,13 @@ fetchApi(method = 'GET', apiBody ) {
     <div className="App">
         <Route exact path="/" render={() => (
           <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} 
-          updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path}/>
+          updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path} typeFilter={this.state.typeFilter}/>
         )} />
 
         <Route path="/results" render={() => 
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
           toggleExpandedItem={this.toggleExpandedItem} handleSubmit={this.handleSubmit} updateSearch={this.updateSearch} 
-          handleMenuChange={this.handleMenuChange} />} />
+          handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter} />} />
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />

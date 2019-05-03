@@ -14,7 +14,7 @@ class SearchForm extends React.Component {
             placeholder="e.g. 20007"/>
         
         What are you looking for?
-        <select id="typeSelection" onChange={e => this.props.handleMenuChange(e.target.value)}> 
+        <select id="typeSelection" value={this.props.typeFilter} onChange={e => this.props.handleMenuChange(e.target.value)}> 
           <option>all</option>
           <option>Restaurant</option>
           <option>Farmers Market</option>
@@ -35,7 +35,7 @@ class SearchForm extends React.Component {
             placeholder="e.g. 20003" />
            
         What are you looking for?
-        <select id="typeSelection" onChange={e => this.props.handleMenuChange(e.target.value)}>
+        <select id="typeSelection" value={this.props.typeFilter} onChange={e => this.props.handleMenuChange(e.target.value)}>
           <option defaultValue="all" >all</option> 
           <option value="Restaurant">Restaurant</option>
           <option value="Farmers Market"> Farmers Market</option>

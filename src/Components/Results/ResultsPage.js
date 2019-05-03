@@ -16,7 +16,7 @@ class ResultsPage extends React.Component {
             {/* TODO: <h3>{header}</h3> */} 
           </header>
           <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
-          updateSearch={this.props.updateSearch} handleMenuChange={this.props.handleMenuChange}/>
+          updateSearch={this.props.updateSearch} handleMenuChange={this.props.handleMenuChange} typeFilter={this.props.typeFilter}/>
           
           <ResultsList results = {this.props.results}
           toggleExpandedItem={this.props.toggleExpandedItem} 
