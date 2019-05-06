@@ -21,9 +21,9 @@ function Nav(props) {
         <Link to={'/'}>SustainaChoice</Link>
       </div>
       <div className="nav--home-links">
-        <Link to={'/why-eat-sustainably'}>Why eat sustainably?</Link>
-        <Link to={'/consumer-help'}>How can consumers help?</Link>
-        <Link to={'/business-help'}>How can businesses help?</Link>
+        <Link to={'/why-eat-sustainably'}>Why eat sustainably?</Link>{' '}
+        <Link to={'/consumer-help'}>How can consumers help?</Link>{' '}
+        <Link to={'/business-help'}>How can businesses help?</Link>{' '}
       </div>
 
     </nav>
