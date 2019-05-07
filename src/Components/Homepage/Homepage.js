@@ -3,11 +3,12 @@ import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import InfoSection from '../InfoSection/InfoSection';
+import './Homepage.css';
 
 class Homepage extends React.Component {
   render(){
     return (
-    <div className="Homepage">
+    <div className="homepage">
       <Nav path={this.props.path}/>
       <main>
         <Header />

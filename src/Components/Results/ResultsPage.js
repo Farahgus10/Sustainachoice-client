@@ -12,9 +12,7 @@ class ResultsPage extends React.Component {
       <Nav />
   
         <section className="results-section">
-          <header role="banner">
-            {/* TODO: <h3>{header}</h3> */} 
-          </header>
+         
           <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
           updateSearch={this.props.updateSearch} handleMenuChange={this.props.handleMenuChange} typeFilter={this.props.typeFilter}/>
           

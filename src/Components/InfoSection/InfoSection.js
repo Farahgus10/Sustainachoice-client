@@ -6,19 +6,27 @@ function InfoSection() {
   return (
     <div className="InfoSection">
       <section className="why-section">
-        <p>Why eat sustainably?</p>
-        <Link to={'/why-eat-sustainably'}>Learn why your food choices matter</Link>
+        <div className="why-window">
+          <p>Why eat sustainably?</p>
+          <Link to={'/why-eat-sustainably'}>Learn why your food choices matter</Link>
+          <div className="why-background-image"></div>
+        </div>
       </section>
 
       <section className="consumers-how-section">
-        <p>How can consumers help?</p>
-        <Link to={'/consumer-help'}>Make more sustainable choices when you eat</Link>
-        {/* <a href="">Explore restaurants in your area that support your mission</a> */}
+      <div className="consumer-window">
+          <p>How can consumers help?</p>
+          <Link to={'/consumer-help'}>Make more sustainable choices when you eat</Link>
+          <div className="consumer-background-image"></div>
+        </div>
       </section>
 
       <section className="businesses-how-section">
-        <p>How can businesses help?</p>
-        <Link to={'/business-help'}>Steps businesses can take to lower thier carbon footprint</Link>
+        <div className="business-window">
+          <p>How can businesses help?</p>
+          <Link to={'/business-help'}>Steps businesses can take to lower thier carbon footprint</Link>
+          <div className="business-background-image"></div>
+        </div>
       </section>
     </div>
   );

@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
+body,html{
+  margin:0;
+  padding: 0;
+}
+
 body {
   font-family: "Open Sans",
   sans-serif; 
   font-size: 20px;
-  color: #444;
   text-align: center;
   line-height: 1.5;
 }
@@ -18,14 +22,46 @@ footer{
   right: 0;
   background:#ccc;
 }
-
   
 section {
   min-height: 200px;
   padding: 6% 0;
-  background-color: #bbb;
+  background-color: #F7EFE6;
 }
 
-section:nth-child(even) {
-  background-color: #ddd;
+section .why-window, .business-window, .consumer-window{
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 65%;
+  height: 400px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+section .consumer-window, .business-window{
+  height: 480px;
+}
+
+section .why-background-image, .consumer-background-image, .business-background-image{
+  margin: auto;
+  margin-top: 20px;
+  width: 85%;
+  height: 65%;
+}
+
+section .why-background-image{
+  background-image: url('./Images/mussels.jpg');
+  background-size: cover;
+}
+
+section .consumer-background-image{
+  background-image: url('./Images/organic-food-preparation.jpg');
+  background-size: cover;
+}
+
+section .business-background-image{
+  background-image: url('./Images/fisheries.jpg');
+  background-size: cover;
 }

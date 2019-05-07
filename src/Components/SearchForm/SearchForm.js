@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchForm.css';
 
 class SearchForm extends React.Component {
 
@@ -9,11 +10,12 @@ class SearchForm extends React.Component {
           Enter a zip code to search for sustainable food near you:
         </label>
           <input 
+            value={this.props.searchTerm}
             onChange={e => this.props.updateSearch(e.target.value)}
             name="searchTerm" 
             placeholder="e.g. 20007"/>
         
-        What are you looking for?
+        <p>What are you looking for?</p>
         <select id="typeSelection" value={this.props.typeFilter} onChange={e => this.props.handleMenuChange(e.target.value)}> 
           <option>all</option>
           <option>Restaurant</option>
@@ -23,19 +25,20 @@ class SearchForm extends React.Component {
          
         </select>
         
-          <input type="submit"/>
-          <p>*Not sure where to look? Just click Submit to get results for all locations!</p>
+          <button  type="submit">Go!</button>
+          <p className="click-all">*Not sure where to look? Just click Submit to get results for all locations!</p>
       </form> : 
       <form onSubmit={this.props.handleSubmit}>
         <label>
           Search for a new zip code:
         </label>
           <input 
+            value={this.props.searchTerm}
             onChange={e => this.props.updateSearch(e.target.value)}
             id="searchTerm"
             placeholder="e.g. 20003" />
            
-        What are you looking for?
+        <p>What are you looking for?</p>
         <select id="typeSelection" value={this.props.typeFilter} onChange={e => this.props.handleMenuChange(e.target.value)}>
           <option defaultValue="all" >all</option> 
           <option value="Restaurant">Restaurant</option>
@@ -45,11 +48,11 @@ class SearchForm extends React.Component {
           
         </select>
           <button  type="submit">Go!</button>
-          <p>*Not sure where to look? Just click Submit to get results for all locations!</p>
+          <p className="click-all">*Not sure where to look? Just click Submit to get results for all locations!</p>
       </form>
 
     return (
-    <div className="SearchForm">
+    <div className="search-form">
       {searchForm}
     </div>
   )}

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
+import { Route, Router, withRouter } from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import ResultsPage from './Components/Results/ResultsPage';
 import WhyPage from './Components/InfoSection/WhyPage';
@@ -33,9 +32,9 @@ fetchApi(method = 'GET', apiBody ) {
     location_zip_code: this.state.searchTerm
   };
   const urlParams = new URLSearchParams(Object.entries(params));
-  let url = 'http://localhost:8000/api/results?';
+  let url = 'http://localhost:8000/api/results';
 
-  if(this.state.searchTerm) { url = url + urlParams}
+  if(this.state.searchTerm) { url = url + '?' + urlParams}
   if(this.state.typeFilter !== 'all') {
     url = url + `&location_type=${this.state.typeFilter}`
   }
@@ -68,6 +67,7 @@ fetchApi(method = 'GET', apiBody ) {
 
   render() {
   return (
+  
     <div className="App">
         <Route exact path="/" render={() => (
           <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} 
@@ -81,9 +81,9 @@ fetchApi(method = 'GET', apiBody ) {
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
-
       {/* <footer role="content-info">Footer</footer> */}
     </div>
+  
   );
 }}
 

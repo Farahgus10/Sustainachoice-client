@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when there are mulitples items 1`] = `
+<div
+  className="ResultsList"
+>
+  <div
+    className="results"
+  >
+    <ul>
+      <li
+        onClick={[Function]}
+      >
+        <p>
+          Location name 1
+        </p>
+      </li>
+      <li
+        onClick={[Function]}
+      >
+        <p>
+          Location name 2
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`renders correctly when there are no results 1`] = `
+<div
+  className="ResultsList"
+>
+  <div
+    className="results"
+  >
+    <ul>
+      <p>
+        No results
+      </p>
+    </ul>
+  </div>
+</div>
+`;

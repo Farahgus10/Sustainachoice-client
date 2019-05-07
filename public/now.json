@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "alias": "farah-sustainachoice-app",
     "name": "sustainachoice-client",
     "routes": [
         {

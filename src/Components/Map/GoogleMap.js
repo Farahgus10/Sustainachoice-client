@@ -39,9 +39,6 @@ class GoogleMap extends React.Component{
   };
 
   render() {
-    console.log(this.state.center)
-    // const center = (!this.state.selectedPlace.mapCenter) ? 
- 
     return (
       <div className="google-map">
       
@@ -50,9 +47,6 @@ class GoogleMap extends React.Component{
             zoom={this.state.zoomLevel}
             style={mapStyles}
             initialCenter={this.state.center}
-            // mapCenter={
-            //     this.state.center
-            //   }
             >
         {this.props.results.map((place, i) => {
           return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import './App.css';
+import '../../App.css';
 
 class ResultsMap extends React.Component{
   state = {
