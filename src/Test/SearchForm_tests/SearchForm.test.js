@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import SearchForm from '../../Components/SearchForm/SearchForm';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -15,15 +15,16 @@ describe('Search Component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('cancels the event when the form is submitted', () => {
-    const wrapper = shallow(<SearchForm />);
-    let prevented = false;
-    wrapper.find('form').simulate('submit', {
-      preventDefault: () => {
-        prevented = true;
-      }
-    });
-    expect(prevented).toBe(true);
+  it('calls handleSubmit prop when form is submitted', () => {
+    const handleSubmitFn = jest.fn();
+    const wrapper = mount(<SearchForm handleSubmit={handleSubmitFn}/>);
+
+    const form = wrapper.find('form');
+    form.simulate('submit');
+    expect(handleSubmitFn).toHaveBeenCalledTimes(1);
   });
-  
+
+  it('renders a zip code input', () => {
+    expect(shallow(<SearchForm />).find('#zip-code').length).toEqual(1)
+  });
 })

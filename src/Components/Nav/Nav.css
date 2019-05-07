@@ -12,6 +12,16 @@ nav {
   right: 0;
   z-index: 10;
 }
+@media only screen and (min-width: 1000px ){
+  nav{
+      height: 13%;
+  }
+}
+@media only screen and (min-width: 1200px ){
+  nav{
+      height: 15%;
+  }
+}
 .home {
   margin-left: 10px;
 }

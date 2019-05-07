@@ -8,7 +8,7 @@ import './ResultsPage.css';
 class ResultsPage extends React.Component {
   render() {
     return (
-    <div className="results">
+    <div className="results-page">
       <Nav />
   
         <section className="results-section">
@@ -16,12 +16,14 @@ class ResultsPage extends React.Component {
           <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
           updateSearch={this.props.updateSearch} handleMenuChange={this.props.handleMenuChange} typeFilter={this.props.typeFilter}/>
           
+          <div className="results-list-map">
           <ResultsList results = {this.props.results}
           toggleExpandedItem={this.props.toggleExpandedItem} 
-          expandedView={this.props.expandedView}/>
+          expandedView={this.props.expandedView} searchTerm={this.props.searchTerm}/>
 
           <div className="map">
             <GoogleMap results={this.props.results}/>
+          </div>
           </div>
       </section>
 

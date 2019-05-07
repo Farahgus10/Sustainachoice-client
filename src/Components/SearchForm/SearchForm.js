@@ -7,9 +7,10 @@ class SearchForm extends React.Component {
     const searchForm = (this.props.path) ? 
       <form onSubmit={this.props.handleSubmit}>
         <label>
-          Enter a zip code to search for sustainable food near you:
+          <p>Enter a zip code to search for sustainable food near you:</p>
         </label>
           <input 
+            id="zip-code"
             value={this.props.searchTerm}
             onChange={e => this.props.updateSearch(e.target.value)}
             name="searchTerm" 
@@ -30,12 +31,12 @@ class SearchForm extends React.Component {
       </form> : 
       <form onSubmit={this.props.handleSubmit}>
         <label>
-          Search for a new zip code:
+          <p>Search for a new zip code:</p>
         </label>
           <input 
+            id="zip-code"
             value={this.props.searchTerm}
             onChange={e => this.props.updateSearch(e.target.value)}
-            id="searchTerm"
             placeholder="e.g. 20003" />
            
         <p>What are you looking for?</p>

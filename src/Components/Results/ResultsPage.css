@@ -1,10 +1,9 @@
 header {
   padding-top: 2%;
 }
+
   
 .results-section {
-  margin: auto;
-  width: 100%;
   display: block;
   padding-bottom: 2%;
   background-color: white;
@@ -13,16 +12,25 @@ header {
 }
   
 .results {
-  display: flex;
-  flex-direction: row; 
-  flex-wrap: nowrap; 
   margin-bottom: 80px;
-  width: 60%;
+  width: 100%;
+  overflow: hidden;
 }
-  
+
+.ResultsList{
+  margin: auto;
+  width: 80%;
+  height: 400px;
+  overflow-y: auto;
+  border-top: 1px solid lightgrey;
+  margin-bottom: 5px;
+}
+
 .results ul {
   list-style: none;
   text-align: left;
+  padding-left: 0px;
+  margin: 0px;
 }
 
 .results li:hover{
@@ -31,7 +39,6 @@ header {
 
 .results li {
   padding: 3%;
-  margin-top: 4px;
   margin-bottom: 4px;
   border: solid lightgray 1px;
   font-size: 13px;
@@ -43,10 +50,6 @@ header {
 
 .results a:hover{
   text-decoration: underline;
-}
-
-.map{
-  float: right;
 }
 
 footer {
