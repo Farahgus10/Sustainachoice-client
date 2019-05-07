@@ -3,9 +3,12 @@
 }
 
 body,html{
+  height: 100%;
   margin:0;
   padding: 0;
 }
+
+
 
 body {
   font-family: "Open Sans",
@@ -15,14 +18,26 @@ body {
   line-height: 1.5;
 }
 
-footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background:#ccc;
+.Site{
+  display: flex;
+  flex-direction: column;
 }
-  
+
+/* 
+.Site-content{
+  flex: 1 0 auto;
+  padding: var(--space) var(--space) 0;
+  width: 100%;
+}
+
+.Site-content:after {
+  content: '\00a0';
+  display: block;
+  margin-top: var(--space);
+  height: 0;
+  visibility: hidden;
+} */
+
 section {
   min-height: 200px;
   padding: 6% 0;

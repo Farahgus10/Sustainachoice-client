@@ -68,7 +68,8 @@ fetchApi(method = 'GET', apiBody ) {
   render() {
   return (
   
-    <div className="App">
+    <div className="App Site">
+      <div className="Site-content">
         <Route exact path="/" render={() => (
           <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} 
           updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path} typeFilter={this.state.typeFilter}/>
@@ -81,7 +82,8 @@ fetchApi(method = 'GET', apiBody ) {
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
-      {/* <footer role="content-info">Footer</footer> */}
+      </div>
+      <footer role="content-info">Footer</footer>
     </div>
   
   );
