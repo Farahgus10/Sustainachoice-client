@@ -9,8 +9,8 @@ class ResultsList extends React.Component {
         if (this.props.expandedView === i ) {
         return (<li key={i} onClick={() => this.props.toggleExpandedItem(-1) }>
         <p>{item.location_name}</p>
-        <p>{item.location_type}</p>
         <p>{item.info}</p>
+        <p>{item.location_type}</p>
         <p>{item.location_address}</p>
         <a href={item.website}>{item.website}</a>
       </li>)
@@ -18,6 +18,7 @@ class ResultsList extends React.Component {
         return (
            <li key={i} onClick={() => this.props.toggleExpandedItem(i)}>
           <p>{item.location_name}</p>
+          <p>{item.info}</p>
           </li>
         )
       }

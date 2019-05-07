@@ -32,9 +32,9 @@ fetchApi(method = 'GET', apiBody ) {
     location_zip_code: this.state.searchTerm
   };
   const urlParams = new URLSearchParams(Object.entries(params));
-  let url = 'http://localhost:8000/api/results';
+  let url = 'http://localhost:8000/api/results?';
 
-  if(this.state.searchTerm) { url = url + '?' + urlParams}
+  if(this.state.searchTerm) { url = url + urlParams}
   if(this.state.typeFilter !== 'all') {
     url = url + `&location_type=${this.state.typeFilter}`
   }

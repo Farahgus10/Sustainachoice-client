@@ -1,10 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import SearchForm from '../../Components/SearchForm/SearchForm';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-it('renders without crashing', () => {
+configure({ adapter: new Adapter() });
+
+describe('Search Component', () => {
+  it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<SearchForm />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  it('cancels the event when the form is submitted', () => {
+    const wrapper = shallow(<SearchForm />);
+    let prevented = false;
+    wrapper.find('form').simulate('submit', {
+      preventDefault: () => {
+        prevented = true;
+      }
+    });
+    expect(prevented).toBe(true);
+  });
+  
+})

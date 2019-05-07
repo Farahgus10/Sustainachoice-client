@@ -1,17 +1,3 @@
-* {
-    box-sizing: border-box;
-  }
-  
-/* nav {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-} */
-  
 header {
   padding-top: 2%;
 }
@@ -21,7 +7,7 @@ header {
   width: 100%;
   display: block;
   padding-bottom: 2%;
-  background-color: #bbb;
+  background-color: white;
   margin-top: 10%;
   padding-bottom: 3%;
 }
@@ -29,22 +15,38 @@ header {
 .results {
   display: flex;
   flex-direction: row; 
-  flex-wrap: nowrap;   
+  flex-wrap: nowrap; 
   margin-bottom: 80px;
-  width: 90%;
+  width: 60%;
 }
   
-ul {
+.results ul {
   list-style: none;
   text-align: left;
 }
 
-li {
+.results li:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.results li {
   padding: 3%;
   margin-top: 4px;
   margin-bottom: 4px;
   border: solid lightgray 1px;
   font-size: 13px;
+}
+
+.results:hover{
+  cursor: pointer;
+}
+
+.results a:hover{
+  text-decoration: underline;
+}
+
+.map{
+  float: right;
 }
 
 footer {
