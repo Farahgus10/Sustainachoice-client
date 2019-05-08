@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
 
-footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background:#ccc;
-}
-
 p, .consumer-how-page li{
   font-family: 'Noto Serif JP', serif;
 }
@@ -17,13 +9,14 @@ p, .consumer-how-page li{
   font-size: 15px;
 }
 
-.why-page h1{
-  text-align: center;
-}
-
-.why-page, .consumer-how-page{
-  margin-top: 20%;
+.why-page, .consumer-how-page, .business-how-page{
+  margin-top: 18%;
   padding-left: 30px;
   padding-right: 30px;
   text-align: left;
+}
+@media only screen and (min-width: 900px ){
+  .why-page, .consumer-how-page, .business-how-page{
+      margin-top: 12%;
+  }
 }

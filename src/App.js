@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Router, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import ResultsPage from './Components/Results/ResultsPage';
 import WhyPage from './Components/InfoSection/WhyPage';
