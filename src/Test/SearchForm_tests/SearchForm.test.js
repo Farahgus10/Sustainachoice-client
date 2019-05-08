@@ -24,7 +24,4 @@ describe('Search Component', () => {
     expect(handleSearchSubmitFn).toHaveBeenCalledTimes(1);
   });
 
-  it('renders a zip code input', () => {
-    expect(shallow(<SearchForm />).find('#zip-code').length).toEqual(1)
-  });
 })

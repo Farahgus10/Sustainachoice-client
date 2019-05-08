@@ -2,10 +2,11 @@ import React from 'react';
 import EmailForm from './EmailForm';
 import './Footer.css'
 
-function Footer() {
+function Footer(props) {
   return (
     <div className="footer">
-      <EmailForm />
+      <EmailForm emails={props.emails} emailSubmit={props.emailSubmit} emailInput={props.emailInput}
+      updateEmail={props.updateEmail} emailFormVisible={props.emailFormVisible}/>
     </div>
   );
 }

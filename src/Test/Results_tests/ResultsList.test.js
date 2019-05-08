@@ -32,11 +32,11 @@ it('renders without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-// it('renders correctly when there are no results', () => {
-//   const tree = renderer.create(<ResultsList />)
-//     .toJSON();
-//     expect(tree).toMatchSnapshot();
-// })
+it('renders correctly when there are no results', () => {
+  const tree = renderer.create(<ResultsList />)
+    .toJSON();
+    expect(tree).toMatchSnapshot();
+})
 
 // it('renders correctly when there are mulitples items', () => {
 //   const tree = renderer.create(<ResultsList results={resultsList} />)

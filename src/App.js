@@ -11,11 +11,17 @@ import './App.css';
 class App extends React.Component {
   state = {
     results: [],
+    emails: [],
     expandedView: false,
     searchTerm: '',
+    emailFormVisible: true,
+    emailInput: '',
     typeFilter: 'all',
   }
 
+//=============================
+//        SEARCH FORM
+// ============================
 updateSearch = (searchTerm) => {
   this.setState({searchTerm})
 }
@@ -24,6 +30,7 @@ handleSearchSubmit = (e) => {
   e.preventDefault();
   this.fetchApi();
 }
+
 handleMenuChange = (typeFilter) => {
   this.setState({ typeFilter })
 }
@@ -60,11 +67,49 @@ fetchApi(method = 'GET', apiBody ) {
   .catch(error => console.log('Error:', error));
   }
 
-  toggleExpandedItem = (key) => {
-    this.setState({
-      expandedView: key,
-    })
-  }
+//=============================
+//         EMAIL FORM
+// ============================
+updateEmail = (emailInput) => {
+  this.setState({emailInput})
+}
+
+handleEmailSubmit = (e) => {
+  e.preventDefault();
+  let body = { email: e.currentTarget.newEmail.value};
+  this.fetchEmail(body);
+
+  this.setState({ emailFormVisible: false })
+}
+
+fetchEmail(apiBody) {
+  fetch('http://localhost:8000/api/emails', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(apiBody)
+  })
+  .then(response => { 
+    if (!response.ok) {
+      return
+    } else { return response.json() }
+    
+  })
+  .then (response => {
+    console.log(response)
+    let newEmail = { id: response.id, email: apiBody.email};
+    this.setState({emails: [...this.state.emails, newEmail]})
+  })
+  .catch(error => console.log('Error:', error));
+}
+
+
+toggleExpandedItem = (key) => {
+  this.setState({
+    expandedView: key,
+  })
+}
 
   render() {
   return (
@@ -83,8 +128,9 @@ fetchApi(method = 'GET', apiBody ) {
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
-        <Footer />
+        
       </div>
+      <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}/>
     </div>
   
   );

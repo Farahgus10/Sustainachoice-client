@@ -2,9 +2,9 @@ import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
-  width: '80%',
-  height: '100%',
-  margin: 'auto'
+  width: '100%',
+  height: '620px',
+  // top: '1px'
 }
 
 class GoogleMap extends React.Component{
@@ -26,7 +26,6 @@ class GoogleMap extends React.Component{
         lat: 40.854885,
         lng: -88.081807
       }
-    // center: { lat: props.mapCenter.lat, long: props.mapCenter.long}
     });
 
     onClose = () => {    // onClose closes the infoWindow once a user clicks on the close button 
