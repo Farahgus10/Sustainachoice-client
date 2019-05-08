@@ -5,6 +5,7 @@ import ResultsPage from './Components/Results/ResultsPage';
 import WhyPage from './Components/InfoSection/WhyPage';
 import ConsumerHowPage from './Components/InfoSection/ConsumerHowPage';
 import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
+import Footer from './Components/Footer/Footer'
 import './App.css';
 
 class App extends React.Component {
@@ -82,8 +83,8 @@ fetchApi(method = 'GET', apiBody ) {
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
+        <Footer />
       </div>
-      <footer role="content-info">Footer</footer>
     </div>
   
   );
