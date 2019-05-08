@@ -11,7 +11,7 @@ function Homepage(props) {
       <Nav path={props.path}/>
       <main>
         <Header />
-        <SearchForm handleSubmit={props.handleSubmit} searchTerm={props.searchTerm}
+        <SearchForm handleSearchSubmit={props.handleSearchSubmit} searchTerm={props.searchTerm}
             updateSearch={props.updateSearch} path={props.path} handleMenuChange={props.handleMenuChange} typeFilter={props.typeFilter}/>
         <InfoSection />
       </main>

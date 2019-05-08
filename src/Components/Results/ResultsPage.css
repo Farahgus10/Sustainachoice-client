@@ -61,7 +61,3 @@ header {
 .results a:hover{
   text-decoration: underline;
 }
-
-footer {
-  bottom: 0;
-}

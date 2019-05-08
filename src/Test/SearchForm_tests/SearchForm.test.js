@@ -15,13 +15,13 @@ describe('Search Component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('calls handleSubmit prop when form is submitted', () => {
-    const handleSubmitFn = jest.fn();
-    const wrapper = mount(<SearchForm handleSubmit={handleSubmitFn}/>);
+  it('calls handleSearchSubmit prop when form is submitted', () => {
+    const handleSearchSubmitFn = jest.fn();
+    const wrapper = mount(<SearchForm handleSearchSubmit={handleSearchSubmitFn}/>);
 
     const form = wrapper.find('form');
     form.simulate('submit');
-    expect(handleSubmitFn).toHaveBeenCalledTimes(1);
+    expect(handleSearchSubmitFn).toHaveBeenCalledTimes(1);
   });
 
   it('renders a zip code input', () => {

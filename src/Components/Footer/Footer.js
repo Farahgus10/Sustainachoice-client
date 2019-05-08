@@ -1,9 +1,11 @@
 import React from 'react';
+import EmailForm from './EmailForm';
+import './Footer.css'
 
 function Footer() {
   return (
-    <div className="Footer">
-      Footer
+    <div className="footer">
+      <EmailForm />
     </div>
   );
 }

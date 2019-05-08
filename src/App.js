@@ -20,7 +20,7 @@ updateSearch = (searchTerm) => {
   this.setState({searchTerm})
 }
 
-handleSubmit = (e) => {
+handleSearchSubmit = (e) => {
   e.preventDefault();
   this.fetchApi();
 }
@@ -72,13 +72,13 @@ fetchApi(method = 'GET', apiBody ) {
     <div className="App Site">
       <div className="Site-content">
         <Route exact path="/" render={() => (
-          <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} 
+          <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSearchSubmit={this.handleSearchSubmit} 
           updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path} typeFilter={this.state.typeFilter}/>
         )} />
 
         <Route path="/results" render={() => 
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
-          toggleExpandedItem={this.toggleExpandedItem} handleSubmit={this.handleSubmit} updateSearch={this.updateSearch} 
+          toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
           handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter} />} />
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />

@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav';
 import SearchForm from '../SearchForm/SearchForm';
 import ResultsList from './ResultsList';
 import GoogleMap from '../Map/GoogleMap';
+import Footer from '../Footer/Footer'
 import './ResultsPage.css';
 
 function ResultsPage(props) {
@@ -12,7 +13,7 @@ function ResultsPage(props) {
   
         <section className="results-section">
          
-          <SearchForm handleSubmit={props.handleSubmit} searchTerm={props.searchTerm}
+          <SearchForm handleSearchSubmit={props.handleSearchSubmit} searchTerm={props.searchTerm}
           updateSearch={props.updateSearch} handleMenuChange={props.handleMenuChange} typeFilter={props.typeFilter}/>
           
           <div className="results-list-map">
@@ -24,7 +25,9 @@ function ResultsPage(props) {
             <GoogleMap results={props.results}/>
           </div>
           </div>
+          <Footer />
       </section>
+      
     </div>
     );
   }  
