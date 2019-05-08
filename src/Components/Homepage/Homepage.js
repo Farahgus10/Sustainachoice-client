@@ -5,19 +5,18 @@ import SearchForm from '../SearchForm/SearchForm';
 import InfoSection from '../InfoSection/InfoSection';
 import './Homepage.css';
 
-class Homepage extends React.Component {
-  render(){
+function Homepage(props) {
     return (
     <div className="homepage">
-      <Nav path={this.props.path}/>
+      <Nav path={props.path}/>
       <main>
         <Header />
-        <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
-            updateSearch={this.props.updateSearch} path={this.props.path} handleMenuChange={this.props.handleMenuChange} typeFilter={this.props.typeFilter}/>
+        <SearchForm handleSubmit={props.handleSubmit} searchTerm={props.searchTerm}
+            updateSearch={props.updateSearch} path={props.path} handleMenuChange={props.handleMenuChange} typeFilter={props.typeFilter}/>
         <InfoSection />
       </main>
     </div>
-  )}  
-}
+  )
+}  
 
 export default Homepage;

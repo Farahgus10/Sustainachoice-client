@@ -7,13 +7,6 @@ class ResultsMap extends React.Component{
     showingInfoWindow: false, // Hides or shows the infoWindow  
     activeMarker: {},         // Shows the active marker upon click
     selectedPlace: {},        // Shows the infoWindow to the selected place upon a marker
-    places: [
-      {
-        "name": "The White House",
-        "lat": "38.8977",
-        "long": "-77.0365"
-        }
-    ]
   }
 
   onMarkerClick = (props, marker) =>  // onMarkerClick shows the infoWindow, which is a component in the google-maps-library that shows a window w/ more details of the place

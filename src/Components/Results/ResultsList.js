@@ -1,13 +1,11 @@
 import React from 'react';
 
-class ResultsList extends React.Component {
-  
-  render(){
-      const result = (!this.props.results) ? <p>No results</p> : 
-      this.props.results.map((item, i) => 
+function ResultsList(props) {
+      const result = (!props.results) ? <p>No results</p> : 
+      props.results.map((item, i) => 
       {
-        if (this.props.expandedView === i ) {
-        return (<li key={i} onClick={() => this.props.toggleExpandedItem(-1) }>
+        if (props.expandedView === i ) {
+        return (<li key={i} onClick={() => props.toggleExpandedItem(-1) }>
         <p>{item.location_name}</p>
         <p>{item.info}</p>
         <p>{item.location_type}</p>
@@ -16,7 +14,7 @@ class ResultsList extends React.Component {
       </li>)
       } else {
         return (
-           <li key={i} onClick={() => this.props.toggleExpandedItem(i)}>
+           <li key={i} onClick={() => props.toggleExpandedItem(i)}>
           <p>{item.location_name}</p>
           <p>{item.info}</p>
           </li>
@@ -32,7 +30,8 @@ class ResultsList extends React.Component {
       </ul>
       </div>
     </div>
-  )}
+  )
 }
+
 
 export default ResultsList;

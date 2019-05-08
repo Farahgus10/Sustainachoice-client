@@ -5,33 +5,28 @@ import ResultsList from './ResultsList';
 import GoogleMap from '../Map/GoogleMap';
 import './ResultsPage.css';
 
-class ResultsPage extends React.Component {
-  render() {
+function ResultsPage(props) {
     return (
     <div className="results-page">
       <Nav />
   
         <section className="results-section">
          
-          <SearchForm handleSubmit={this.props.handleSubmit} searchTerm={this.props.searchTerm}
-          updateSearch={this.props.updateSearch} handleMenuChange={this.props.handleMenuChange} typeFilter={this.props.typeFilter}/>
+          <SearchForm handleSubmit={props.handleSubmit} searchTerm={props.searchTerm}
+          updateSearch={props.updateSearch} handleMenuChange={props.handleMenuChange} typeFilter={props.typeFilter}/>
           
           <div className="results-list-map">
-          <ResultsList results = {this.props.results}
-          toggleExpandedItem={this.props.toggleExpandedItem} 
-          expandedView={this.props.expandedView} searchTerm={this.props.searchTerm}/>
+          <ResultsList results = {props.results}
+          toggleExpandedItem={props.toggleExpandedItem} 
+          expandedView={props.expandedView} searchTerm={props.searchTerm}/>
 
           <div className="map">
-            <GoogleMap results={this.props.results}/>
+            <GoogleMap results={props.results}/>
           </div>
           </div>
       </section>
-
-
-        {/* <footer role="content-info">Footer</footer> */}
     </div>
     );
   }  
-}
 
 export default ResultsPage;
