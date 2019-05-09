@@ -7,6 +7,7 @@ import ConsumerHowPage from './Components/InfoSection/ConsumerHowPage';
 import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
 import Footer from './Components/Footer/Footer'
 import './App.css';
+import config from './config'
 
 class App extends React.Component {
   state = {

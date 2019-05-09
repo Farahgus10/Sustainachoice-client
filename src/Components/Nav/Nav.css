@@ -71,6 +71,7 @@ nav {
   padding: 20px 20px;
   font-size: 13px;
   line-height: 30px;
+  transition: max-height 0.7s ease-in; 
 }
 
 .dropdown-content a:hover {

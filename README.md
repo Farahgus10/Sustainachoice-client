@@ -1,11 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# SustainaChoice
+### Author: 
+Farah Gustafson
+
+#### Link to live app:
+[SustainaChoice](https://farah-sustainachoice-app.now.sh/ "SustainaChoice") https://farah-sustainachoice-app.now.sh/
+
+#### API used in this app: 
+Maps Javascript API: https://developers.google.com/maps/documentation/javascript/tutorial
+
+#### App Summary:
+SustainaChoice is an app that allows users in the Washington, D.C. area to enter their location and find results for places in their area where they can find sustainably-sourced food. Users can search by zip code and filter by type (restaurant, farmers market, grocery store, bar), or they can simply choose to see all results for all locations. Users can click on links on the homepage or in the nav bar to learn more information about sustainability. Users can also choose to sign up for a newsletter by entering in their email in a form located in the footer. 
+
+#### Technical stack: 
+JavaScript, React, CSS
+
 
 ## Available Scripts
-
 In the project directory, you can run:
 
 ### `npm start`
-
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -13,19 +27,8 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 ### `npm test`
-
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
