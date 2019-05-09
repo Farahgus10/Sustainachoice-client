@@ -24,8 +24,9 @@ describe('Email Form Component', () => {
   });
 
   it('calls emailSubmit prop when form is submitted', () => {
+    
     const handleEmailSubmitFn = jest.fn();
-    const wrapper = mount(<EmailForm emailSubmit={handleEmailSubmitFn}/>)
+    const wrapper = mount(<EmailForm emailSubmit={handleEmailSubmitFn} emailFormVisible={true}/>)
     
     const form = wrapper.find('form');
     form.simulate('submit');

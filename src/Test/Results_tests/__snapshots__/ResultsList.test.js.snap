@@ -8,9 +8,13 @@ exports[`renders correctly when there are no results 1`] = `
     className="results"
   >
     <ul>
-      <p>
-        No results
-      </p>
+      <div
+        className="no-results"
+      >
+        <p>
+          No results
+        </p>
+      </div>
     </ul>
   </div>
 </div>
