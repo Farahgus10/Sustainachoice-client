@@ -4,7 +4,7 @@
 Farah Gustafson
 
 #### Link to live app:
-[SustainaChoice](https://farah-sustainachoice-app.now.sh/ "SustainaChoice") https://farah-sustainachoice-app.now.sh/
+[SustainaChoice](https://farah-sustainachoice-app.now.sh/ "SustainaChoice")
 
 #### API used in this app: 
 Maps Javascript API: https://developers.google.com/maps/documentation/javascript/tutorial
