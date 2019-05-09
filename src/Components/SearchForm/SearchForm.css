@@ -7,7 +7,7 @@ button{
     display: block;
     margin: auto;
     margin-top: 10px;
-    border: 1px solid black;
+    border: none;
     border-radius: 8px 8px 8px 8px;
     background: none;
     font-size: 16px;
@@ -15,10 +15,14 @@ button{
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
 }
 
 button:hover{
     cursor: pointer;
+    box-shadow: inset 100px 0 0 0 #eeb4b4;
 }
 
 .search-form{

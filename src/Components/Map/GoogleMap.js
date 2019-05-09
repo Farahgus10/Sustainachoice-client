@@ -4,7 +4,6 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 const mapStyles = {
   width: '100%',
   height: '620px',
-  // top: '1px'
 }
 
 class GoogleMap extends React.Component{
@@ -39,6 +38,10 @@ class GoogleMap extends React.Component{
   };
 
   render() {
+    const defaultMapOption = {
+      mapTypeControl: false,
+      fullscreenControl: false
+    }
     return (
       <div className="google-map">
       
@@ -47,6 +50,8 @@ class GoogleMap extends React.Component{
             zoom={this.state.zoomLevel}
             style={mapStyles}
             initialCenter={this.state.center}
+            defaultOptions={defaultMapOption}
+            disableDefaultUI
             >
         {this.props.results.map((place, i) => {
           return (

@@ -128,9 +128,12 @@ toggleExpandedItem = (key) => {
         <Route path="/why-eat-sustainably" component = { WhyPage } />
         <Route path="/consumer-help" component = { ConsumerHowPage } />
         <Route path="/business-help" component = { BusinessHowPage } />
-        
       </div>
-      <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}/>
+
+      <div id="revealed-section-placeholder"></div>
+      <div id="revealed-section">
+        <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}/>
+      </div>
     </div>
   
   );

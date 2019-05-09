@@ -1,8 +1,7 @@
 import React from 'react';
 
 function ResultsList(props) {
-    console.log(props.results)
-      const result = (props.results.length === 0) ? <p>No results</p> : 
+      const result = (props.results.length === 0) ? <div className="no-results"><p >No results</p></div> : 
       props.results.map((item, i) => 
       {
         if (props.expandedView === i ) {

@@ -29,7 +29,7 @@ class ResultsMap extends React.Component{
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={12}
         style={this.style}
         initialCenter={{ lat: 38.9072, lng: -77.0369 }}
         >

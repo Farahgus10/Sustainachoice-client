@@ -27,7 +27,7 @@ header {
   width: 30%;
   overflow-y: auto;
   height: 620px;
-  background: white;
+  background: rgba(255,255,255, 0.9)
 }
 
 .ResultsList{
@@ -71,4 +71,8 @@ header {
 
 .item-name{
   font-weight: bold;
+}
+
+.no-results{
+  text-align: center;
 }

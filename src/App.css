@@ -90,3 +90,11 @@ section .business-background-image{
   background-image: url('./Images/fisheries.jpg');
   background-size: cover;
 }
+
+.Site-content{
+  position:relative;
+  z-index: 2
+}
+
+#revealed-section {height: 600px; position:fixed; bottom:0; z-index: 1; width:100%; background: transparent;} 
+#revealed-section-placeholder {height: 600px; background:transparent;} 
