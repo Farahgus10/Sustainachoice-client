@@ -7,7 +7,7 @@ function ResultsList(props) {
       {
         if (props.expandedView === i ) {
         return (<li key={i} onClick={() => props.toggleExpandedItem(-1) }>
-        <p>{item.location_name}</p>
+        <p className="item-name">{item.location_name}</p>
         <p>{item.info}</p>
         <p>{item.location_type}</p>
         <p>{item.location_address}</p>
@@ -16,7 +16,7 @@ function ResultsList(props) {
       } else {
         return (
            <li key={i} onClick={() => props.toggleExpandedItem(i)}>
-          <p>{item.location_name}</p>
+          <p className="item-name">{item.location_name}</p>
           <p>{item.info}</p>
           </li>
         )
