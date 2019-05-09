@@ -1,32 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 header {
     display: table;
     width: 100%;
     margin: 0 auto;
-    height: 500px;
-    padding-top: 9%;
-    margin-top: 16%;
+    height: 600px;
+    margin-top: 5%;
     padding-bottom: 5%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
     color: white;
     font-weight: bold;
+}
+
+.header-home-page{
     background-image: url('../../Images/farmersmarket.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-@media only screen and (min-width: 550px ){
-    header{
-        margin-top: 10%
-    }
-}
-@media only screen and (min-width: 950px ){
-    header{
-        margin-top: 7%
-    }
+.header-consumer-page, .header-business-page, .header-why-page{
+    background-image: url('../../Images/table.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
 }
 
-header h1, h3 {
-    margin-top: 30px;
+.header-consumer-page .title, .header-business-page .title, .header-why-page .title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+   margin-left: 50px;
+    color: #118F00;
+}
+header h1{
+    margin-top: 50px;
 }

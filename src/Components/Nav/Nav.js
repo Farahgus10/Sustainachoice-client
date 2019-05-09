@@ -4,16 +4,6 @@ import './Nav.css';
 
 function Nav(props) {
   return (
-    (props.path) ? 
-    <div className="nav">
-      <nav className="nav" role="navigation">
-
-        <div className="nav-link home">
-        <Link to={'/'}>SustainaChoice</Link>
-        </div>
-      </nav>
-    </div>
-    :
     <div className="nav">
       <nav className="nav" role="navigation">
 

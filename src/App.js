@@ -125,14 +125,24 @@ toggleExpandedItem = (key) => {
           <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
           toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
           handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter} />} />
-        <Route path="/why-eat-sustainably" component = { WhyPage } />
-        <Route path="/consumer-help" component = { ConsumerHowPage } />
-        <Route path="/business-help" component = { BusinessHowPage } />
+        
+        <Route path="/why-eat-sustainably" render={() => (
+          <WhyPage />
+        )} />
+
+        <Route path="/consumer-help" render={() => (
+          <ConsumerHowPage path={this.props.match.path}/>
+        )} />
+
+        <Route path="/business-help" render={() => (
+          <BusinessHowPage path={this.props.path}/>
+        )} />
       </div>
 
       <div id="revealed-section-placeholder"></div>
       <div id="revealed-section">
-        <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}/>
+        <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}
+        path={this.props.match.path}/>
       </div>
     </div>
   

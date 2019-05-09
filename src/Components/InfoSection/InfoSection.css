@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+@import url('https://fonts.googleapis.com/css?family=Lora');
 
-p, .consumer-how-page li, .business-how-page li{
-  font-family: 'Noto Serif JP', serif;
+
+
+h1, h4, p, .consumer-how-page li, .business-how-page li{
+  font-family: 'Lora', serif;
 }
 
 .consumer-how-page li, .business-how-page li{
@@ -11,15 +13,8 @@ p, .consumer-how-page li, .business-how-page li{
 }
 
 .why-page, .consumer-how-page, .business-how-page{
-  margin-top: 18%;
-  padding-left: 30px;
-  padding-right: 30px;
+  background-color: #F7EFE6;
   text-align: left;
-}
-@media only screen and (min-width: 900px ){
-  .why-page, .consumer-how-page, .business-how-page{
-      margin-top: 12%;
-  }
 }
 
 .business-how-page{
@@ -28,4 +23,16 @@ p, .consumer-how-page li, .business-how-page li{
 
 .business-how-page .first-paragraph{
   font-size: 17px;
+}
+
+.content{
+  background-color: #F7EFE6;
+  height: 630px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.list-name{
+  font-size: 17px;
+  font-weight: bold;
 }
