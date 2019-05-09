@@ -3,16 +3,16 @@
 ### Author: 
 Farah Gustafson
 
-#### Link to live app:
+### Link to live app:
 [SustainaChoice](https://farah-sustainachoice-app.now.sh/ "SustainaChoice")
 
-#### API used in this app: 
+### API used in this app: 
 Maps Javascript API: https://developers.google.com/maps/documentation/javascript/tutorial
 
-#### App Summary:
+### App Summary:
 SustainaChoice is an app that allows users in the Washington, D.C. area to enter their location and find results for places in their area where they can find sustainably-sourced food. Users can search by zip code and filter by type (restaurant, farmers market, grocery store, bar), or they can simply choose to see all results for all locations. Users can click on links on the homepage or in the nav bar to learn more information about sustainability. Users can also choose to sign up for a newsletter by entering in their email in a form located in the footer. 
 
-#### Technical stack: 
+### Technical stack: 
 JavaScript, React, CSS
 
 
