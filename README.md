@@ -10,7 +10,7 @@ Farah Gustafson
 Maps Javascript API: https://developers.google.com/maps/documentation/javascript/tutorial
 
 ### App Summary:
-SustainaChoice allows users in the Washington, D.C. area to enter their location and find results on where they can find sustainably-sourced food in their area. Users can search by zip code and filter by type (restaurant, farmers market, grocery store, bar), or they can simply choose to see all results for all locations. Results are shown as a list, and the user can click on any list item to read more information on it. Clicking on a map marker will zoom into that location on the map, and clicking the 'x' buttom will cause the map to zoom back out.
+SustainaChoice allows users in the Washington, D.C. area to enter their location and find results on where they can find sustainably-sourced food in their area. Users can search by zip code and filter by type (restaurant, farmers market, grocery store, bar), or they can simply choose to see all results for all locations. Results are shown as a list, and the user can click on any list item to read more information on it. Clicking on a map marker will zoom into that location on the map, and clicking the 'x' button will cause the map to zoom back out.
 ![Homepage Search Form](/src/Screenshots/HomepageSearchForm.png?raw=true)
 ![Results Page with Map](/src/Screenshots/ResultsListandMap.png?raw=true)
 
@@ -24,7 +24,7 @@ Users can click on links on the homepage or in the nav bar to learn more informa
 These links are also available on the home page if you scroll down. 
 ![Homepage Search Form](/src/Screenshots/HomeWhyPage.png?raw=true)
 
-Finally, users can choose to sign up for a newsletter by entering in their email in a form located in the footer. 
+Finally, users can choose to sign up for a newsletter by entering their email into a form located in the footer.
 ![Homepage Search Form](/src/Screenshots/Footer.png?raw=true)
 
 ### Technical stack: 
