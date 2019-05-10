@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
 .click-all{
     font-size: 12px;
     padding: 12px 12px;
@@ -28,6 +30,7 @@
 .search-form{
     margin: auto;
     margin-top: 30px;
+    font-family: 'Lora', serif;
 }
 
 input{
