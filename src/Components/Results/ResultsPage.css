@@ -73,6 +73,10 @@ header {
   font-weight: bold;
 }
 
+.item-info{
+  text-indent: 20px;
+}
+
 .no-results{
   text-align: center;
 }
