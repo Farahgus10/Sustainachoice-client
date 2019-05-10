@@ -6,20 +6,16 @@ h1, h4, p, .consumer-how-page li, .business-how-page li{
 
 .consumer-how-page li, .business-how-page li{
   list-style: none;
-  font-size: 15px;
 }
 
 .why-page, .consumer-how-page, .business-how-page{
   background-color: #F7EFE6;
   text-align: left;
-}
-
-.business-how-page{
-  padding-bottom: 20%;
+  padding-bottom: 5%;
 }
 
 .business-how-page .first-paragraph{
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .content{
@@ -30,12 +26,12 @@ h1, h4, p, .consumer-how-page li, .business-how-page li{
 }
 @media only screen and (min-width: 600px ){
   .content{
-    height: 700px;
+    height: 100%;
   }
 }
 @media only screen and (min-width: 1000px ){
   .content{
-    height: 550px;
+    height: 100%;
   }
 }
 

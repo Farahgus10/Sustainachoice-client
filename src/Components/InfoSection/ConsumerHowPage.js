@@ -9,6 +9,7 @@ function ConsumerHowPage(props) {
     <Nav />
     <Header path={props.location.pathname}/>
       <div className="content">
+      <h1>What can you do as a consumer?</h1>
         <h4>Unless you are a farmer, the best way to support sustainable efforts is to eat sustainably. The best ways you can do this are:</h4>
         <ul>
           <li>Shop locally: shop at your local farmers markets, or choose restaurants that make sustainability a priority.<br/><br/></li>

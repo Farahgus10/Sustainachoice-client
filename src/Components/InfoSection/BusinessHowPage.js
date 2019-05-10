@@ -10,7 +10,7 @@ function BusinessHowPage(props) {
     <Header path={props.location.pathname}/>
     <div className="content">
       <h1>How can businesses help?</h1>
-      <p className="first-paragraph">Over the past few years, the restaurant landscape has changed dramatically, as consumers have become more conscious than even of where their food comes from. With increased consumer awareness comes increased business responsibility in being able to keep their establishment sustainable and serving sustainably-responsible food. In order to make your business run more sustainably, the entire team must be committed, but it is very possible. Step business can take to improve their carbon footprint include:</p>
+      <p className="first-paragraph">Environmentally sound food doesn't stop at the farm; restaurants and manufacturers have to become more conscientious of where they get their food from and how they run their business. Over the past few years, the restaurant landscape has changed dramatically, as consumers have become more conscious than even of where their food comes from. With increased consumer awareness comes increased business responsibility in being able to keep their establishment sustainable and serving sustainably-responsible food. In order to make your business run more sustainably, the entire team must be committed, but it is very possible. Step business can take to improve their carbon footprint include:</p>
       <ul>
         <li>
           <p className="list-name"> Cooking what's in season and from local sources</p>
@@ -24,7 +24,7 @@ function BusinessHowPage(props) {
           <p className="list-name">Grow your own food</p>
           <p>Plenty of restaurants are starting to grow their own herbs and veggies in their own gardens. This is a great way to reduce your carbon footprint from transport costs.</p>
         </li>
-        <li>Manage your waste</li>
+        <li>Manage waste. This can involve so many different things, but reducing overall food waste and composting are the most obvious. Some bars are beginning to adopt a "closed-loop system," where drink recipes are planned according to what they have on hand and nothing else.</li>
       </ul>
       </div>
     </div>
