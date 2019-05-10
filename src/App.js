@@ -41,7 +41,7 @@ fetchApi(method = 'GET', apiBody ) {
     location_zip_code: this.state.searchTerm
   };
   const urlParams = new URLSearchParams(Object.entries(params));
-  let url = 'http://localhost:8000/api/results?';
+  let url = config.API_ENDPOINT + '/results?';
 
   if(this.state.searchTerm) { url = url + urlParams}
   if(this.state.typeFilter !== 'all') {
@@ -84,7 +84,7 @@ handleEmailSubmit = (e) => {
 }
 
 fetchEmail(apiBody) {
-  fetch('http://localhost:8000/api/emails', {
+  fetch(config.API_ENDPOINT + '/emails', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
