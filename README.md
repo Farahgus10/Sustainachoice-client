@@ -27,8 +27,8 @@ These links are also available on the home page if you scroll down.
 Finally, users can choose to sign up for a newsletter by entering their email into a form located in the footer.
 ![Homepage Search Form](/src/Screenshots/Footer.png?raw=true) (The footer and search form components are located in the Footer folder as Footer.js and EmailForm.js)
 
-### Technical stack: 
-JavaScript, React, CSS
+### Technical stack:
+React, CSS, Node, Express, and PostgreSQL
 
 
 ## Available Scripts
