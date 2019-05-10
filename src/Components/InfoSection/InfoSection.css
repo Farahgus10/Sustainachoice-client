@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lora');
 
-h1, h4, p, .consumer-how-page li, .business-how-page li{
-  font-family: 'Lora', serif;
-}
-
 .consumer-how-page li, .business-how-page li{
   list-style: none;
 }
 
 .why-page, .consumer-how-page, .business-how-page{
   background-color: #F7EFE6;
+  font-family: 'Lora', serif;
   text-align: left;
   padding-bottom: 5%;
 }
 
 .business-how-page .first-paragraph{
   font-size: 18px;
+  text-indent: 50px;
 }
 
 .content{

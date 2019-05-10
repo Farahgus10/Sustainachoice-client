@@ -14,8 +14,9 @@ function WhyPage(props) {
       <p>Sustainability focuses on the production of food or other plant or animal products using farming techniques and practices that help to conserve natural resources and have minimal impacts on the environment.</p>
 
       <p>Sustainable agricultre enables us to produce healthful food without compromising future generations’ ability to do the same.</p>
-
-      <h4>Why eat sustainably?</h4>
+      
+      <br/>
+      <h2>Why eat sustainably?</h2>
       
       <p>Sustainable eating and farming hopes to replace “conventional farming” and it’s destructive and harmful effects on the environment. </p>
       <p>When you start paying attention to where your food comes from, how it is grown, produced, harvested and prepared, not only are you taking control of your own health, but you are helping your community and environment.</p>
