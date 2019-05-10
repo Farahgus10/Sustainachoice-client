@@ -4,7 +4,6 @@ import './Footer.css';
 class EmailForm extends React.Component {
 
 render(){
-
     return(
       (this.props.emailFormVisible) ? 
       <div className="email">

@@ -3,7 +3,6 @@ import EmailForm from './EmailForm';
 import './Footer.css'
 
 function Footer(props) {
-  console.log(props.path)
   return (
     
     <div className="footer">

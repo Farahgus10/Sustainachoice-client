@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
 //=============================
-//        SEARCH FORM
+//  HANDLERS FOR SEARCH FORM
 // ============================
 updateSearch = (searchTerm) => {
   this.setState({searchTerm})
@@ -69,7 +69,7 @@ fetchApi(method = 'GET', apiBody ) {
   }
 
 //=============================
-//         EMAIL FORM
+//  HANDLERS FOR EMAIL FORM
 // ============================
 updateEmail = (emailInput) => {
   this.setState({emailInput})
@@ -98,13 +98,11 @@ fetchEmail(apiBody) {
     
   })
   .then (response => {
-    console.log(response)
     let newEmail = { id: response.id, email: apiBody.email};
     this.setState({emails: [...this.state.emails, newEmail]})
   })
   .catch(error => console.log('Error:', error));
 }
-
 
 toggleExpandedItem = (key) => {
   this.setState({
@@ -112,41 +110,32 @@ toggleExpandedItem = (key) => {
   })
 }
 
-  render() {
-  return (
+render() {
+return (
   
-    <div className="App Site">
-      <div className="Site-content">
-        <Route exact path="/" render={() => (
-          <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSearchSubmit={this.handleSearchSubmit} 
-          updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path} typeFilter={this.state.typeFilter}/>
-        )} />
+  <div className="App Site">
+    <div className="Site-content">
+      <Route exact path="/" render={() => (
+        <Homepage results={this.state.results} searchTerm={this.state.searchTerm} handleSearchSubmit={this.handleSearchSubmit} 
+        updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path} typeFilter={this.state.typeFilter}/>
+      )} />
 
-        <Route path="/results" render={() => 
-          <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
-          toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
-          handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter} />} />
-        
-        <Route path="/why-eat-sustainably" render={() => (
-          <WhyPage />
-        )} />
-
-        <Route path="/consumer-help" render={() => (
-          <ConsumerHowPage path={this.props.match.path}/>
-        )} />
-
-        <Route path="/business-help" render={() => (
-          <BusinessHowPage path={this.props.path}/>
-        )} />
-      </div>
-
-      <div id="revealed-section-placeholder"></div>
-      <div id="revealed-section">
-        <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}
-        path={this.props.match.path}/>
-      </div>
+      <Route path="/results" render={() => 
+        <ResultsPage results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
+        toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
+        handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter} />} />
+      
+      <Route path="/why-eat-sustainably" component={ WhyPage } />
+      <Route path="/consumer-help" component={ ConsumerHowPage } />
+      <Route path="/business-help" component={ BusinessHowPage }/>
     </div>
-  
+
+    <div id="revealed-section-placeholder"></div>
+    <div id="revealed-section">
+      <Footer emailSubmit={this.handleEmailSubmit} emailInput={this.state.emailInput} updateEmail={this.updateEmail} emailFormVisible={this.state.emailFormVisible}
+      path={this.props.match.path}/>
+    </div>
+  </div>
   );
 }}
 

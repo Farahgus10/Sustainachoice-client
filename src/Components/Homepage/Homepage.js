@@ -3,7 +3,6 @@ import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import InfoSection from '../InfoSection/InfoSection';
-
 import './Homepage.css';
 
 function Homepage(props) {

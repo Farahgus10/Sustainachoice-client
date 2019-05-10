@@ -4,7 +4,6 @@ import Nav from '../Nav/Nav'
 import Header from '../Header/Header'
 
 function WhyPage(props) {
-  console.log(props.location.pathname)
   return (
     <div className="why-page">
     <Nav />

@@ -2,7 +2,6 @@ import React from 'react';
 import './SearchForm.css';
 
 function SearchForm(props) {
-    // if the path is "/" then render the question with this wording, else (e.g. /results) render it a different way
     const searchForm = (props.path) ? 
       <form className="search-form" onSubmit={props.handleSearchSubmit}>
         <label htmlFor="zip-cpde">
@@ -27,7 +26,8 @@ function SearchForm(props) {
         </label>
           <button className="search-button" type="submit">Go!</button>
           <p className="click-all">*Not sure where to look? Just click Go to get results for all locations!</p>
-      </form> : 
+      </form> 
+      : 
       <form className="search-form" onSubmit={props.handleSearchSubmit}>
         <label htmlFor="zip-cpde">
           <p>Search for a new zip code:</p>
@@ -59,6 +59,5 @@ function SearchForm(props) {
     </div>
   )
 }
-
 
 export default SearchForm;

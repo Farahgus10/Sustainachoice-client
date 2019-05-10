@@ -34,8 +34,8 @@ function Header(props) {
         <h1 className="title">How can businesses help?</h1>
       </header>
   }
+  
   return (
-    
     <div className={headerStyling}>
       {content}
     </div>
