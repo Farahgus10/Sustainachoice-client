@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100');
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+@import url('https://fonts.googleapis.com/css?family=Lora');
 
 nav {
   display: flex;
@@ -50,7 +51,8 @@ nav {
   border: none;
   outline: none;
   background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
+  font-family: 'Lora', serif;
+  /* font-family: inherit;  Important for vertical align on mobile phones */
 }
 @media only screen and (min-width: 500px ){
   .dropdown .dropbtn {

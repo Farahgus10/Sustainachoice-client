@@ -9,9 +9,14 @@ header {
     padding-bottom: 5%;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
-    font-size: 28px;
+    font-size: 19px;
     color: white;
     font-weight: bold;
+}
+@media only screen and (min-width: 600px ){
+    header{
+        font-size: 25px;
+    }
 }
 
 .header-home-page{
