@@ -16,7 +16,6 @@ function ResultsList(props) {
         return (
            <li key={i} onClick={() => props.toggleExpandedItem(i)}>
           <p className="item-name">{item.location_name}</p>
-          <p>{item.info}</p>
           </li>
         )
       }
