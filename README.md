@@ -12,8 +12,20 @@ Maps Javascript API: https://developers.google.com/maps/documentation/javascript
 ### App Summary:
 SustainaChoice is an app that allows users in the Washington, D.C. area to enter their location and find results for places in their area where they can find sustainably-sourced food. Users can search by zip code and filter by type (restaurant, farmers market, grocery store, bar), or they can simply choose to see all results for all locations. 
 ![Homepage Search Form](/src/Screenshots/HomepageSearchForm.png?raw=true)
+![Results Page with Map](/src/Screenshots/ResultsListandMap.png?raw=true)
 
-Users can click on links on the homepage or in the nav bar to learn more information about sustainability. Users can also choose to sign up for a newsletter by entering in their email in a form located in the footer. 
+Users can choose to make a new search directly from the results page, instead of navigating back to the homepage. 
+![Homepage Search Form](/src/Screenshots/ResultsPageSearchForm.png?raw=true)
+
+Users can click on links on the homepage or in the nav bar to learn more information about sustainability.
+![Homepage Search Form](/src/Screenshots/LearnMore.png?raw=true)
+![Homepage Search Form](/src/Screenshots/WhyPage.png?raw=true)
+
+These links are also available on the home page if you scroll down. 
+![Homepage Search Form](/src/Screenshots/HomeWhyPage.png?raw=true)
+
+Finally, users can choose to sign up for a newsletter by entering in their email in a form located in the footer. 
+![Homepage Search Form](/src/Screenshots/Footer.png?raw=true)
 
 ### Technical stack: 
 JavaScript, React, CSS
