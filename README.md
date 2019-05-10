@@ -7,7 +7,7 @@ Farah Gustafson
 [SustainaChoice](https://farah-sustainachoice-app.now.sh/ "SustainaChoice")
 
 ### API used in this app: 
-Maps Javascript API: https://developers.google.com/maps/documentation/javascript/tutorial
+Google Maps Javascript API: https://developers.google.com/maps/documentation/javascript/tutorial
 
 ### App Summary:
 SustainaChoice allows users in the Washington, D.C. area to search for where they can find sustainably-sourced food in their area.
