@@ -1,4 +1,5 @@
 import React from 'react';
+import EmailService from './Services/Email-Service'
 import { Route, withRouter } from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import ResultsPage from './Components/Results/ResultsPage';
@@ -40,8 +41,9 @@ fetchApi(method = 'GET', apiBody ) {
   const params = {
     location_zip_code: this.state.searchTerm
   };
+  
   const urlParams = new URLSearchParams(Object.entries(params));
-  let url = config.API_ENDPOINT + '/results?';
+  let url = config.REACT_APP_API_BASE + '/results?';
 
   if(this.state.searchTerm) { url = url + urlParams}
   if(this.state.typeFilter !== 'all') {
@@ -77,31 +79,13 @@ updateEmail = (emailInput) => {
 
 handleEmailSubmit = (e) => {
   e.preventDefault();
-  let body = { email: e.currentTarget.newEmail.value};
-  this.fetchEmail(body);
-
-  this.setState({ emailFormVisible: false })
-}
-
-fetchEmail(apiBody) {
-  fetch(config.API_ENDPOINT + '/emails', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify(apiBody)
+  
+  EmailService.postEmail({
+    email: e.currentTarget.newEmail.value
   })
-  .then(response => { 
-    if (!response.ok) {
-      return
-    } else { return response.json() }
-    
-  })
-  .then (response => {
-    let newEmail = { id: response.id, email: apiBody.email};
-    this.setState({emails: [...this.state.emails, newEmail]})
-  })
-  .catch(error => console.log('Error:', error));
+    .then(response => {
+      this.setState({ emailFormVisible: false })
+    })
 }
 
 toggleExpandedItem = (key) => {
