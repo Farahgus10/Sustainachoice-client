@@ -4,6 +4,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import HomepageRoute from './Routes/HomepageRoute/homepageRoute'
 import ResultsRoute from './Routes/ResultsRoute/resultsRoute';
 import LoginRoute from './Routes/LoginRoute/loginRoute'
+import RegistrationRoute from './Routes/RegistrationRoute/registrationRoute';
 import WhyPage from './Components/InfoSection/WhyPage';
 import ConsumerHowPage from './Components/InfoSection/ConsumerHowPage';
 import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
@@ -109,6 +110,7 @@ return (
   <div className="App Site">
     {/* <Switch> */}
       <Route exact path='/login' component={LoginRoute}/>
+      <Route path='/register' component={RegistrationRoute}/>
 
       <Route exact path="/" render={() => (
           <HomepageRoute results={this.state.results} searchTerm={this.state.searchTerm} handleSearchSubmit={this.handleSearchSubmit} 
