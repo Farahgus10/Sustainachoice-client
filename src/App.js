@@ -47,7 +47,7 @@ fetchApi(method = 'GET', apiBody ) {
   };
   
   const urlParams = new URLSearchParams(Object.entries(params));
-  let url = config.REACT_APP_API_BASE + 'api/results?';
+  let url = config.REACT_APP_API_BASE + '/api/results?';
 
   if(this.state.searchTerm) { url = url + urlParams}
   if(this.state.typeFilter !== 'all') {

@@ -23,14 +23,14 @@ header {
     background-image: url('../../Images/farmersmarket.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
-@media only screen and (min-width: 730px ){
+@media only screen and (max-width: 730px ){
     .header-home-page{
         margin-top: 8%;
     }
 }
-@media only screen and (min-width: 1000px ){
+@media only screen and (max-width: 1000px ){
     .header-home-page{
         margin-top: 6%;
     }
