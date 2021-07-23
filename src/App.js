@@ -8,6 +8,7 @@ import RegistrationRoute from './Routes/RegistrationRoute/registrationRoute';
 import WhyPage from './Components/InfoSection/WhyPage';
 import ConsumerHowPage from './Components/InfoSection/ConsumerHowPage';
 import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
+import LocationRoute from './Routes/LocationRoute/locationRoute';
 import Footer from './Components/Footer/Footer'
 import PrivateRoute from './Routes/PrivateRoute/privateRoute'
 import './App.css';
@@ -103,10 +104,9 @@ render() {
   // if(this.props !== {}) {
   //   loginComponent = <Route exact path='/' component={LoginRoute} />
   // }
-
   
 return (
-  
+
   <div className="App Site">
     {/* <Switch> */}
       <Route exact path='/login' component={LoginRoute}/>
@@ -120,9 +120,16 @@ return (
         <ResultsRoute results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
         toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
         handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter}/> }/>
+
       <Route path="/why-eat-sustainably" component={ WhyPage } />
       <Route path="/consumer-help" component={ ConsumerHowPage } />
       <Route path="/business-help" component={ BusinessHowPage }/>
+
+      <Route path="/location/:locationId" render={(props) => 
+        <LocationRoute results={this.state.results} path={props.match}/> }/>
+
+
+      {/* <Route path='/location/:locationId' component={LocationRoute} /> */}
     {/* </Switch> */}
 
     {/* <div className="Site-content"> */}
