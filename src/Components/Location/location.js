@@ -23,7 +23,7 @@ export default class Location extends React.Component {
                 <Nav />
                 {this.renderLocationTitle()}
                 <div>
-
+                    {/* Comment form component */}
                 </div>
             </div>
         )
