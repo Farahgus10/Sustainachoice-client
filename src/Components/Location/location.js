@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../Nav/Nav'
+import CommentForm from '../CommentForm/commentForm'
 
 export default class Location extends React.Component {
     state = {
@@ -23,7 +24,7 @@ export default class Location extends React.Component {
                 <Nav />
                 {this.renderLocationTitle()}
                 <div>
-                    {/* Comment form component */}
+                    <CommentForm />
                 </div>
             </div>
         )
