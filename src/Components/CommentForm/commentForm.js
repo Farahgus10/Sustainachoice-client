@@ -1,39 +1,36 @@
 import React from "react";
 
+
 export default class CommentForm extends React.Component{
     state = {
         comment: '',
     }
     
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { locationId } = this.props.locationId;
+        const { text } = e.target
 
-    }
 
-    handleFieldChange = (e) => {
-        const { value } = e.target;
-        this.setState({
-            comment: value
-        })
-        console.log(this.state.comment)
     }
 
     render() {
         return(
-            <div className="comment_form">
-                <form onSubmit={this.handleSubmit}>
+            <form className="comment_form" onSubmit={this.handleSubmit}>
+                <div>
                     <textarea
-                        onChange={this.handleFieldChange}
                         value={this.state.comment}
+                        aria-label='Say something about this place'
                         placeholder="Say something about this place"
                         name="comment"
                         rows='5'
                         cols='100'
                     />
-                    <div className="submit_button">
-                        <button>Post</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div className="submit_button">
+                    <button type='submit'>Post</button>
+                </div>
+            </form>
         )
     }
 }

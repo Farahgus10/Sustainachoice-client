@@ -7,6 +7,10 @@ export default class Location extends React.Component {
         
     }
 
+    componentDidMount = () => {
+
+    }
+
     renderLocationTitle = () => {
         return this.props.location.map(result => 
             <div>
@@ -18,13 +22,14 @@ export default class Location extends React.Component {
     }
 
     render() {
+        let locationId = this.props.location.map(result => result.id) 
         console.log(this.props.location)
         return(
             <div className="location_page">
                 <Nav />
                 {this.renderLocationTitle()}
                 <div>
-                    <CommentForm />
+                    <CommentForm locationId={locationId}/>
                 </div>
             </div>
         )

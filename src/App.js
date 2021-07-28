@@ -100,11 +100,6 @@ toggleExpandedItem = (key) => {
 }
 
 render() {
-  // let loginComponent;
-  // if(this.props !== {}) {
-  //   loginComponent = <Route exact path='/' component={LoginRoute} />
-  // }
-  
 return (
 
   <div className="App Site">
