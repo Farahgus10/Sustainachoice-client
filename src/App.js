@@ -11,6 +11,7 @@ import BusinessHowPage from './Components/InfoSection/BusinessHowPage';
 import LocationRoute from './Routes/LocationRoute/locationRoute';
 import Footer from './Components/Footer/Footer'
 import PrivateRoute from './Routes/PrivateRoute/privateRoute'
+import PublicRoute from './Routes/PublicRoute/publicRoute';
 import './App.css';
 import config from './config'
 
@@ -100,35 +101,38 @@ toggleExpandedItem = (key) => {
 }
 
 render() {
+  console.log(this.state.results)
 return (
 
   <div className="App Site">
     {/* <Switch> */}
-      <Route exact path='/login' component={LoginRoute}/>
-      <Route path='/register' component={RegistrationRoute}/>
+      {/* <PublicRoute exact path='/login' component={LoginRoute}/> */}
+      <Route exact path='/login' component={LoginRoute}/> 
+      <PublicRoute path='/register' component={RegistrationRoute}/>
 
       <Route exact path="/" render={() => (
           <HomepageRoute results={this.state.results} searchTerm={this.state.searchTerm} handleSearchSubmit={this.handleSearchSubmit} 
           updateSearch={this.updateSearch} handleMenuChange={this.handleMenuChange} path={this.props.match.path} typeFilter={this.state.typeFilter}/>
       )} />
-      <Route path="/results" render={() => 
+      {/* <PrivateRoute
+        path={'/'}
+        component={HomepageRoute}
+        results={this.state.results}
+      /> */}
+
+
+
+      <PrivateRoute path="/results" render={() => 
         <ResultsRoute results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
         toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
         handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter}/> }/>
 
-      <Route path="/why-eat-sustainably" component={ WhyPage } />
-      <Route path="/consumer-help" component={ ConsumerHowPage } />
-      <Route path="/business-help" component={ BusinessHowPage }/>
+      <PrivateRoute path="/why-eat-sustainably" component={ WhyPage } />
+      <PrivateRoute path="/consumer-help" component={ ConsumerHowPage } />
+      <PrivateRoute path="/business-help" component={ BusinessHowPage }/>
 
-      <Route path="/location/:locationId" render={(props) => 
+      <PrivateRoute path="/location/:locationId" render={(props) => 
         <LocationRoute results={this.state.results} path={props.match}/> }/>
-
-
-      {/* <Route path='/location/:locationId' component={LocationRoute} /> */}
-    {/* </Switch> */}
-
-    {/* <div className="Site-content"> */}
-    {/* </div> */}
 
     <div id="revealed-section-placeholder"></div>
     {/* <div id="revealed-section">

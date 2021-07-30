@@ -3,6 +3,7 @@ import Homepage from '../../Components/Homepage/Homepage'
 
 export default class HomepageRoute extends React.Component{
     render() {
+        // console.log(this.props.results)
         return(
             <div>
                 <Homepage results={this.props.results} searchTerm={this.props.searchTerm} handleSearchSubmit={this.props.handleSearchSubmit}
