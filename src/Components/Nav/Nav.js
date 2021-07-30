@@ -4,9 +4,18 @@ import TokenService from '../../Services/Token-Service';
 import './Nav.css';
 
 function Nav(props) {
+  
+  function renderLogoutLink() {
+    return (
+        <div className="logout_link">
+          <Link to='/login' className="link" onClick={handleLogout}>Logout</Link>
+        </div>
+      )   
+  }
+  
   function handleLogout() {
     TokenService.clearAuthToken()
-}
+  }
 
   return (
     <div className="nav">
@@ -16,9 +25,11 @@ function Nav(props) {
         <Link to={'/'}>SustainaChoice</Link>
       </div>
       <div className="links_right">
-        <div className="logout_link">
-          <Link to='/login' className="link" onClick={handleLogout}>Logout</Link>
-        </div>
+        
+        {TokenService.hasAuthToken()
+        ? renderLogoutLink()
+        : ''}
+
         <div className="dropdown">
         <button className="dropbtn">Learn More</button>
           <div className="dropdown-content">
