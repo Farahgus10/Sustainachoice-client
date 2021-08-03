@@ -3,7 +3,11 @@ import TokenService from './Token-Service'
 
 const CommentsService = {
     getAllComments() {
-        return fetch(`${config.REACT_APP_API_BASE}/comments`)
+        return fetch(`${config.REACT_APP_API_BASE}/comments`, {
+            headers: {
+                'authorizaton':`bearer ${TokenService.getAuthToken()}`,
+            }
+        })
             .then(res => {
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
             })

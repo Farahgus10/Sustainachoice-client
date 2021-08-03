@@ -8,7 +8,7 @@ export default class CommentForm extends React.Component{
     
     handleSubmit = e => {
         e.preventDefault();
-        const locationId = this.props.locationId;
+        const locationId = parseInt(this.props.locationId);
         const { text } = e.target
         console.log(locationId)
         CommentsService.postComment({

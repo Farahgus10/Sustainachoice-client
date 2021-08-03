@@ -122,16 +122,16 @@ return (
 
 
 
-      <PrivateRoute path="/results" render={() => 
+      <Route path="/results" render={() => 
         <ResultsRoute results={this.state.results} searchTerm={this.state.searchTerm} expandedView={this.state.expandedView} 
         toggleExpandedItem={this.toggleExpandedItem} handleSearchSubmit={this.handleSearchSubmit} updateSearch={this.updateSearch} 
         handleMenuChange={this.handleMenuChange} typeFilter={this.state.typeFilter}/> }/>
 
-      <PrivateRoute path="/why-eat-sustainably" component={ WhyPage } />
-      <PrivateRoute path="/consumer-help" component={ ConsumerHowPage } />
-      <PrivateRoute path="/business-help" component={ BusinessHowPage }/>
+      <Route path="/why-eat-sustainably" component={ WhyPage } />
+      <Route path="/consumer-help" component={ ConsumerHowPage } />
+      <Route path="/business-help" component={ BusinessHowPage }/>
 
-      <PrivateRoute path="/location/:locationId" render={(props) => 
+      <Route path="/location/:locationId" render={(props) => 
         <LocationRoute results={this.state.results} path={props.match}/> }/>
 
     <div id="revealed-section-placeholder"></div>
